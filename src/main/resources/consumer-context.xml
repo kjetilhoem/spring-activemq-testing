@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="no" xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:jms="http://www.springframework.org/schema/jms" xmlns:task="http://www.springframework.org/schema/task"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+    
+    <task:executor id="jms-consumers" keep-alive="60" pool-size="0-5" />
+    
+    <!-- TODO this setup can probably be done using spring-integration as well, but it may be overkill??? -->
+    <jms:listener-container task-executor="jms-consumers">
+    <!-- TODO errorHandler / DestinationResolver / TransactionManager / MessageConverter etc... -->
+    <!-- 
+    // c.setClientId(clientId)
+    // c.setTransactionManager(transactionManager)
+    // c.setDestinationName(destinationName)    // TODO check out DestinationResolver
+    // c.setDurableSubscriptionName(durableSubscriptionName)
+    // c.setSubscriptionDurable(subscriptionDurable)
+    -->
+    
+        <jms:listener destination="Queue.Echo" ref="consumer" method="echo" />
+            <!-- TODO will the listenerId be converted to a ClientID / how does the DestinationResolver map to destination-name -->
+    </jms:listener-container>
+</beans>
