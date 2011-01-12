@@ -10,17 +10,21 @@
     <task:executor id="jms-consumers" keep-alive="60" pool-size="0-3" />
     
     <!-- TODO this setup can probably be done using spring-integration as well, but it may be overkill??? -->
-    <jms:listener-container task-executor="jms-consumers">
-    <!-- TODO errorHandler / DestinationResolver / TransactionManager / MessageConverter etc... -->
-    <!-- 
-    // c.setClientId(clientId)
-    // c.setTransactionManager(transactionManager)
-    // c.setDestinationName(destinationName)    // TODO check out DestinationResolver
-    // c.setDurableSubscriptionName(durableSubscriptionName)
-    // c.setSubscriptionDurable(subscriptionDurable)
-    -->
-    
+    <jms:listener-container task-executor="jms-consumers"  >
+        <!-- TODO errorHandler / DestinationResolver / TransactionManager / MessageConverter etc... -->
+        <!-- 
+        // c.setClientId(clientId)
+        // c.setTransactionManager(transactionManager)
+        // c.setDestinationName(destinationName)    // TODO check out DestinationResolver
+        // c.setDurableSubscriptionName(durableSubscriptionName)
+        // c.setSubscriptionDurable(subscriptionDurable)
+        -->
         <jms:listener destination="Echo" ref="consumer" method="echo" />
-            <!-- TODO will the listenerId be converted to a ClientID / how does the DestinationResolver map to destination-name -->
+            <!-- TODO will the listener-id be converted to a ClientID / how does the DestinationResolver map to destination-name -->
+    </jms:listener-container>
+    
+    
+    <jms:listener-container task-executor="jms-consumers" destination-type="topic">
+        <jms:listener destination="Stats.>" ref="consumer" method="eatStatistics" />
     </jms:listener-container>
 </beans>

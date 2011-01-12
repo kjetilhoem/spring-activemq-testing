@@ -11,6 +11,7 @@ import javax.jms.TextMessage;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.jms.core.SessionCallback;
 import org.springframework.jms.support.JmsUtils;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -25,6 +26,7 @@ public class Producer {
     private final Logger logger = Logger.getLogger(getClass());
     
     private int echoCounter;
+    private int statCounter;
     
     @Autowired
     private JmsTemplate jmsTemplate;
@@ -69,5 +71,16 @@ public class Producer {
     }
     
     
-    // TODO pubSub-stuff please...
+    /**
+     * Publishes a message to one of the topics, Stats.A/B
+     */
+    @Scheduled(fixedRate=1000)
+    public void reportStats() {
+        
+        jmsTemplate.send((statCounter++ %2 == 0) ? "Stats.A" : "Stats.B", new MessageCreator() {    // TODO will this resolve to Topics or Queues...
+            @Override public Message createMessage(Session session) throws JMSException {
+                return session.createTextMessage("someStat " + statCounter);
+            }
+        });
+    }
 }

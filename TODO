@@ -1,0 +1,69 @@
+
+    Producer.reportStats() virker ikke, resolver til Queues, ikke to topics..
+
+
+     misc snacks
+         http://activemq.apache.org/redelivery-policy.html
+         dead letter strategy...
+         http://activemq.apache.org/configure-startup-destinations.html
+         hvordan setter man opp camel-shit serverside??
+        
+     - auto-reconnect - http://activemq.apache.org/how-can-i-support-auto-reconnection.html
+
+     - http://activemq.apache.org/how-do-i-create-new-destinations.html    ... funker det her som jeg tror??
+
+     - embedded broker for testing please... http://activemq.apache.org/how-do-i-restart-embedded-broker.html
+            - Set the persistent=false flag in the <broker/> element of the Xml Configuration or on the property BrokerService
+            - vm://broker1?marshal=false&broker.persistent=false
+
+     - connection-pooling
+         - http://activemq.apache.org/maven/activemq-core/apidocs/org/apache/activemq/pool/PooledConnectionFactory.html
+         - kanskje den ikke skal brukes sammen med atomikos, hvis den skal, er det over eller under? probably over?
+
+     - er det noe poeng i å bruke spring-integration at all? too much abstraction?
+     
+     - rapporting av feil tilbake til clients, i.e. et system tilsvarende SOAP-faults?
+
+
+    JIRA-issues
+        - sett opp en sane config-fil + extract env-settings til /etc/default/activemq?
+            - http://activemq.apache.org/security.html
+            - http://activemq.apache.org/unix-shell-script.html
+
+        - start-script
+            - http://activemq.apache.org/unix-shell-script.html
+
+        - installer-package
+            - routing-regler etc kan deployes sammen i denne pakka .. http://activemq.apache.org/how-should-i-package-applications-using-camel-and-activemq.html
+
+        - http://activemq.apache.org/visualisation.html
+
+        - JMX med configured ports
+            http://activemq.apache.org/jmx.html
+
+        - asynch producer flow control, connctionFactory.setProducerWindowSize(1024000);  -  http://activemq.apache.org/producer-flow-control.html
+
+        - http://activemq.apache.org/activemq-message-properties.html
+            messages are persistent by default, and has no expiry, this must be tweaked for jalla-messages
+
+        - http://activemq.apache.org/advisory-message.html
+            subscribe to admin-topics for notifications, i.e. DLQ entries / slow consumers / fast producers etc..
+
+        - http://activemq.apache.org/delay-and-schedule-message-delivery.html
+            scheduled messages, seems like a cool idea =)
+
+        - entity-storage, bra måte å unngå XA + http://activemq.apache.org/should-i-use-xa.html / Message.getJMSRedelivered()
+            kan implementeres som en AOP proxy, i.e.
+                MessageHandler {
+                    handle(message)
+                    isDuplicate(message) : boolean
+                }
+
+                hvis Message.getJMSRedelivered(), gjør et kall til isDuplicate() for å sjekke om meldingen allerede er håndtert..
+
+
+        - lagre meldinger på disk eller db, http://activemq.apache.org/jdbc-support.html
+
+        - hvis vi skal kjøre JMS over wan (muligens en slags requirement i EC2) burde det krypteres .. http://activemq.apache.org/how-do-i-use-ssl.html
+
+        - EC2-based logserver bør bruke JMS istedenfor hand-rolled socket-crapper? http://activemq.apache.org/how-do-i-use-log4j-jms-appender-with-activemq.html
