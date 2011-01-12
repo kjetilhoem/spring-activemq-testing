@@ -14,7 +14,7 @@ public class Consumer {
      * The fantastic echo-service =)
      */
     public String echo(String value) {
-        logger.info("echoing '" + value + "'");
+        // logger.info("echoing '" + value + "'");
         return value;
     }
 }

@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
     http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
     
-    <task:executor id="jms-consumers" keep-alive="60" pool-size="0-5" />
+    <task:executor id="jms-consumers" keep-alive="60" pool-size="0-3" />
     
     <!-- TODO this setup can probably be done using spring-integration as well, but it may be overkill??? -->
     <jms:listener-container task-executor="jms-consumers">
@@ -20,7 +20,7 @@
     // c.setSubscriptionDurable(subscriptionDurable)
     -->
     
-        <jms:listener destination="Queue.Echo" ref="consumer" method="echo" />
+        <jms:listener destination="Echo" ref="consumer" method="echo" />
             <!-- TODO will the listenerId be converted to a ClientID / how does the DestinationResolver map to destination-name -->
     </jms:listener-container>
 </beans>
