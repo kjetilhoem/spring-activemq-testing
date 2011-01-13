@@ -1,6 +1,4 @@
     
-    - clean up ActiveMQ dependencies..
-    
     - Set up & use a MessageConverter
     
     - TODO's
