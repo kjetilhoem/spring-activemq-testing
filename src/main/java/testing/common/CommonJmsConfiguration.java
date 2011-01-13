@@ -15,13 +15,11 @@ public class CommonJmsConfiguration {
     
     @Bean
     public ConnectionFactory connectionFactory() {
-        final PooledConnectionFactory pooledFactory = new PooledConnectionFactory(createConnectionFactory());
-        // TODO setters please..
-        return pooledFactory;
+        return new PooledConnectionFactory(createConnectionFactory());
     }
     
     
-    private ActiveMQConnectionFactory createConnectionFactory() { // // TODO Kjetil: the ConnectionFactory interface must probably be wrapped by some Atomikos-implementation
+    private ActiveMQConnectionFactory createConnectionFactory() { // TODO Kjetil: the ConnectionFactory interface must probably be wrapped by some Atomikos-implementation
         final ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory("tcp://localhost:61616"); // TODO failover, handled by spring?
         // factory.setClientIDPrefix(clientIDPrefix)    TODO should this be set to appName perhaps?
         // TODO bunch of settings here...factory.setX.. check 'em out, see ActiveMQConnectionFactoryFactoryBean for the most important ones?

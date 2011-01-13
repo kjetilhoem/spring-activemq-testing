@@ -1,11 +1,15 @@
 
+
+    - create a configuration for standalone ActiveMQ, test durable subscriptions...
+        - finn ut av ClientID stuff
+    - implement using spring-integration, cleaner? (krever spring 3.0.5)
+
+
      misc snacks
          http://activemq.apache.org/redelivery-policy.html
          dead letter strategy...
          http://activemq.apache.org/configure-startup-destinations.html
          hvordan setter man opp camel-shit serverside??
-
-     - er det noe poeng i å bruke spring-integration at all? too much abstraction?
      
      - rapporting av feil tilbake til clients, i.e. et system tilsvarende SOAP-faults?
      
