@@ -4,18 +4,6 @@
          dead letter strategy...
          http://activemq.apache.org/configure-startup-destinations.html
          hvordan setter man opp camel-shit serverside??
-        
-     - auto-reconnect - http://activemq.apache.org/how-can-i-support-auto-reconnection.html
-
-     - http://activemq.apache.org/how-do-i-create-new-destinations.html    ... funker det her som jeg tror??
-
-     - embedded broker for testing please... http://activemq.apache.org/how-do-i-restart-embedded-broker.html
-            - Set the persistent=false flag in the <broker/> element of the Xml Configuration or on the property BrokerService
-            - vm://broker1?marshal=false&broker.persistent=false
-
-     - connection-pooling
-         - http://activemq.apache.org/maven/activemq-core/apidocs/org/apache/activemq/pool/PooledConnectionFactory.html
-         - kanskje den ikke skal brukes sammen med atomikos, hvis den skal, er det over eller under? probably over?
 
      - er det noe poeng i å bruke spring-integration at all? too much abstraction?
      
