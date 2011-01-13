@@ -6,12 +6,20 @@ import javax.jms.Topic;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.apache.activemq.pool.PooledConnectionFactory;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
 public class CommonJmsConfiguration {
+    
+    private final Logger logger = Logger.getLogger(getClass());
+    
+    @Value("#{systemProperties['JmsClientId']}")
+    private String jmsClientId;
+    
     
     @Bean
     public String brokerUrl() {
@@ -27,8 +35,11 @@ public class CommonJmsConfiguration {
     
     private ActiveMQConnectionFactory createConnectionFactory() { // TODO Kjetil: the ConnectionFactory interface must probably be wrapped by some Atomikos-implementation
         final ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory(brokerUrl());
-        // factory.setClientIDPrefix(clientIDPrefix)    TODO should this be set to appName perhaps?
-        // TODO bunch of settings here...factory.setX.. check 'em out, see ActiveMQConnectionFactoryFactoryBean for the most important ones?
+        if (jmsClientId != null) {
+            logger.info("setting JMS ClientID to '" + jmsClientId + "'");
+            factory.setClientID(jmsClientId);
+        }
+        // TODO check out the setters one this one.. probably something interesting here.. see ActiveMQConnectionFactoryFactoryBean for the most important ones?
         return factory;
     }
     

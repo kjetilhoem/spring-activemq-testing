@@ -1,7 +1,5 @@
 
 
-    - create a configuration for standalone ActiveMQ, test durable subscriptions...
-        - finn ut av ClientID stuff
     - implement using spring-integration, cleaner? (krever spring 3.0.5)
 
 
