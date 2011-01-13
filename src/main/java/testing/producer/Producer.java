@@ -19,8 +19,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 
-// TODO this stuff is crap, delux.. should be reimplemented on top of spring-integration's JMS-support, should
-// be a lot cleaner then...
 @Component
 public class Producer {
     

@@ -33,7 +33,7 @@ public class CommonJmsConfiguration {
     }
     
     
-    private ActiveMQConnectionFactory createConnectionFactory() { // TODO Kjetil: the ConnectionFactory interface must probably be wrapped by some Atomikos-implementation
+    private ActiveMQConnectionFactory createConnectionFactory() {
         final ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory(brokerUrl());
         if (jmsClientId != null) {
             logger.info("setting JMS ClientID to '" + jmsClientId + "'");

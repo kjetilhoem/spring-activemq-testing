@@ -9,9 +9,6 @@
     
     <task:executor id="jms-consumers" keep-alive="60" pool-size="0-3" />
     
-    <!-- TODO this setup can probably be done using spring-integration as well, but it may be overkill??? -->
-    <!-- TODO errorHandler / DestinationResolver / TransactionManager / MessageConverter etc... -->
-    
     <!-- p2p listening on queues -->
     <jms:listener-container task-executor="jms-consumers"  >
         <jms:listener destination="Echo" ref="consumer" method="echo" />

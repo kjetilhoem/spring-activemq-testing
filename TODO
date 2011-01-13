@@ -1,8 +1,14 @@
-
-    - fix project TODO's java/xml
+    
     - clean up ActiveMQ dependencies..
+    
     - Set up & use a MessageConverter
+    
+    - TODO's
+        <jms:listener-container -- check out <!-- TODO errorHandler / DestinationResolver -->
+        ConnectionFactory props
+        
     - asynch producer flow control, connctionFactory.setProducerWindowSize(1024000);  -  http://activemq.apache.org/producer-flow-control.html
+    
     
     - http://activemq.apache.org/activemq-message-properties.html
             messages are persistent by default, and has no expiry, this must be tweaked for jalla-messages
@@ -11,10 +17,10 @@
             scheduled messages, seems like a cool idea =)
             
     - entity-storage, bra måte å unngå XA + http://activemq.apache.org/should-i-use-xa.html / Message.getJMSRedelivered()
-            kan implementeres som en AOP proxy, i.e.
-                MessageHandler {
-                    handle(message)
-                    isDuplicate(message) : boolean
-                }
+        kan implementeres som en AOP proxy, i.e.
+            MessageHandler {
+                handle(message)
+                isDuplicate(message) : boolean
+            }
 
-                hvis Message.getJMSRedelivered(), gjør et kall til isDuplicate() for å sjekke om meldingen allerede er håndtert..
+            hvis Message.getJMSRedelivered(), gjør et kall til isDuplicate() for å sjekke om meldingen allerede er håndtert..
