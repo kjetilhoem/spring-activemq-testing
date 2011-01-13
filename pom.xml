@@ -58,6 +58,16 @@
             <artifactId>activemq-spring</artifactId>
             <version>${activemq-version}</version>
         </dependency>
+        
+        <!-- atomikos -->
+        <dependency>
+            <groupId>com.atomikos</groupId>
+            <artifactId>transactions-essentials-all</artifactId>
+            <version>3.6.4</version>
+            <type>pom</type>
+        </dependency>
+        
+        
     </dependencies>
 
 
