@@ -14,13 +14,19 @@ import org.springframework.context.annotation.Configuration;
 public class CommonJmsConfiguration {
     
     @Bean
+    public String brokerUrl() {
+        return "tcp://localhost:61616";
+    }
+    
+    
+    @Bean
     public ConnectionFactory connectionFactory() {
         return new PooledConnectionFactory(createConnectionFactory());
     }
     
     
     private ActiveMQConnectionFactory createConnectionFactory() { // TODO Kjetil: the ConnectionFactory interface must probably be wrapped by some Atomikos-implementation
-        final ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory("tcp://localhost:61616"); // TODO failover, handled by spring?
+        final ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory(brokerUrl());
         // factory.setClientIDPrefix(clientIDPrefix)    TODO should this be set to appName perhaps?
         // TODO bunch of settings here...factory.setX.. check 'em out, see ActiveMQConnectionFactoryFactoryBean for the most important ones?
         return factory;
