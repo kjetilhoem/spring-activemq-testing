@@ -7,6 +7,7 @@ import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TemporaryQueue;
 import javax.jms.TextMessage;
+import javax.jms.Topic;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,13 +32,16 @@ public class Producer {
     @Autowired
     private JmsTemplate jmsTemplate;
     
+    @Autowired
+    private Topic[] statsTopics;
+    
     
     /**
      * Synchronous request/reply implemented using spring-jms JmsTemplate directly, not pretty stuff, but
      * we could probably hide this stuff behind some generic facade, and use that facade behind typesafe/sound
      * interfaces?
      */
-    @Scheduled(fixedRate=500)
+    @Scheduled(fixedRate=5000)
     public void echoSomething() {
         
         final String result = jmsTemplate.execute(new SessionCallback<String>() {
@@ -76,8 +80,7 @@ public class Producer {
      */
     @Scheduled(fixedRate=1000)
     public void reportStats() {
-        
-        jmsTemplate.send((statCounter++ %2 == 0) ? "Stats.A" : "Stats.B", new MessageCreator() {    // TODO will this resolve to Topics or Queues...
+        jmsTemplate.send(statsTopics[statCounter++ % statsTopics.length], new MessageCreator() {
             @Override public Message createMessage(Session session) throws JMSException {
                 return session.createTextMessage("someStat " + statCounter);
             }

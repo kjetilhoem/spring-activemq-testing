@@ -1,7 +1,4 @@
 
-    Producer.reportStats() virker ikke, resolver til Queues, ikke to topics..
-
-
      misc snacks
          http://activemq.apache.org/redelivery-policy.html
          dead letter strategy...
@@ -23,9 +20,18 @@
      - er det noe poeng i å bruke spring-integration at all? too much abstraction?
      
      - rapporting av feil tilbake til clients, i.e. et system tilsvarende SOAP-faults?
-
+     
+     - clean up ActiveMQ dependencies..
 
     JIRA-issues
+        
+        JMS - add a documentation site please
+            - http://java.sun.com/products/jms/docs.html + upload jms1.1 spec
+            - spring's JMS support http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/jms.html
+            - spring-integration & it's JMS-support http://static.springsource.org/spring-integration/reference/htmlsingle/#jms
+            - ActiveMQ - http://activemq.apache.org/version-5-getting-started.html
+        
+    
         - sett opp en sane config-fil + extract env-settings til /etc/default/activemq?
             - http://activemq.apache.org/security.html
             - http://activemq.apache.org/unix-shell-script.html
@@ -42,6 +48,10 @@
             http://activemq.apache.org/jmx.html
 
         - asynch producer flow control, connctionFactory.setProducerWindowSize(1024000);  -  http://activemq.apache.org/producer-flow-control.html
+        
+        - ActiveMQ-WebConsole installeres på tomcat istedenfor embedded i broker (stage/prod)
+        
+        - monitor logfiles
 
         - http://activemq.apache.org/activemq-message-properties.html
             messages are persistent by default, and has no expiry, this must be tweaked for jalla-messages

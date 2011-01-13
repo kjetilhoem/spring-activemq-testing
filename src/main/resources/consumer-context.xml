@@ -25,6 +25,6 @@
     
     
     <jms:listener-container task-executor="jms-consumers" destination-type="topic">
-        <jms:listener destination="Stats.>" ref="consumer" method="eatStatistics" />
+        <jms:listener destination="Stats.>" ref="consumer" method="eatStats" />
     </jms:listener-container>
 </beans>
