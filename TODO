@@ -1,4 +1,8 @@
     
+    - spring-integration krever spring 3.0.5
+        - start m/namespace changes ... http\://www.springframework.org/schema/jms/spring-jms.xsd
+        - continue at http://static.springsource.org/spring-integration/reference/htmlsingle/#jms-message-driven-channel-adapter
+    
     - Set up & use a MessageConverter
         - ErrorHandler, hva skjer client-side hvis f.eks marhsalling feiler? Hva vil vi at skal skje..
         
