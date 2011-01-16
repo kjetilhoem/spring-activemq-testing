@@ -10,8 +10,8 @@
     <task:executor id="jms-consumers" keep-alive="60" pool-size="0-3" />
     
     <!-- p2p listening on queues -->
-    <jms:listener-container task-executor="jms-consumers"  >
-        <jms:listener destination="Echo" ref="consumer" method="echo" />
+    <jms:listener-container task-executor="jms-consumers" message-converter="coreApiMarshallingMessageConverter">
+        <jms:listener destination="ValidateEmailAddress" ref="consumer" method="validateEmailAddress" />
     </jms:listener-container>
     
     <!-- durable subscription on topic(s) using a wildcard-pattern -->

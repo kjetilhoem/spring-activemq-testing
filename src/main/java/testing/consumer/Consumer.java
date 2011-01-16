@@ -1,5 +1,8 @@
 package testing.consumer;
 
+import no.fovea.core.api.emailaddress.ValidateEmailAddressRequest;
+import no.fovea.core.api.emailaddress.ValidateEmailAddressResponse;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +14,12 @@ public class Consumer {
     
     
     /**
-     * The fantastic echo-service =), p2p, listens on a queue & responds to the ReplyTo queue
+     * Mock-implementation of core-api's EmailAddressService.validateEmailAddress(). Listens on a queue &
+     * responds to the ReplyTo queue.
      */
-    public String echo(String value) {
-        // logger.info("echoing '" + value + "'");
-        return value;
+    public ValidateEmailAddressResponse validateEmailAddress(ValidateEmailAddressRequest req) {
+        logger.info("validating: " + req.getEmailAddress());
+        return new ValidateEmailAddressResponse().withCleanedEmailAddress(req.getEmailAddress());
     }
     
     

@@ -50,6 +50,11 @@
             <type>pom</type>
             <!-- <scope>provided</scope> provided doesn't apply here since we don't deploy this mini-app on our tomcat.. -->
         </dependency>
+        <dependency>
+            <groupId>no.fovea.core</groupId>
+            <artifactId>core-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- active-mq, TODO this dependency belongs in commons-jee -->
         <dependency>
