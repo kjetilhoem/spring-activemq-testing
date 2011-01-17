@@ -1,20 +1,23 @@
     
-    - spring-integration krever spring 3.0.5
-        - start m/namespace changes ... http\://www.springframework.org/schema/jms/spring-jms.xsd
-        - continue at http://static.springsource.org/spring-integration/reference/htmlsingle/#jms-message-driven-channel-adapter
+    
+    - 11:25:40 [ WARN] listener.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'Infrastructure.ValidateEmailAddress' - trying to recover. Cause: Cannot publish to a deleted Destination: temp-queue://ID:ubuntu-53537-1295259901626-0:1:2
+        - hvordan funker det her i praksis hvis man kjører med transactions & shit?
+
+    - <int-jms:inbound-gateway .. eneste måte å dele threadpools & shit på er og bruke en standard container.. men FUCK!
     
     - Set up & use a MessageConverter
         - ErrorHandler, hva skjer client-side hvis f.eks marhsalling feiler? Hva vil vi at skal skje..
         
+    - spring-integration krever spring 3.0.5
+        
     - queues blir tømt etter server-restart... why?
     
     - sett opp 3 separate messaging-scenarios, finn ut av hva som er best practive for køtyper osv, temp-queues? One response-queue pr. message?
-        - synchronized request/reply RPC-style
+            - synchronized request/reply RPC-style
         - asynch request/reply, using correlationId or just the response-data for matching..
         - requests only, ala reporting / events
     
     - TODO's
-        <jms:listener-container -- check out <!-- TODO errorHandler / DestinationResolver -->
         ConnectionFactory props
         
     - asynch producer flow control, connctionFactory.setProducerWindowSize(1024000);  -  http://activemq.apache.org/producer-flow-control.html

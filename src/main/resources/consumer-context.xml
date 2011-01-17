@@ -1,22 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans default-autowire="no" xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:jms="http://www.springframework.org/schema/jms" xmlns:task="http://www.springframework.org/schema/task"
+    xmlns:jms="http://www.springframework.org/schema/jms"
+    xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+    xmlns:int="http://www.springframework.org/schema/integration"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd
-    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/jms
+    http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
+    http://www.springframework.org/schema/integration/jms
+    http://www.springframework.org/schema/integration/jms/spring-integration-jms-2.0.xsd
+    http://www.springframework.org/schema/integration
+    http://www.springframework.org/schema/integration/spring-integration-2.0.xsd">
     
-    <task:executor id="jms-consumers" keep-alive="60" pool-size="0-3" />
     
-    <!-- p2p listening on queues -->
-    <jms:listener-container task-executor="jms-consumers" message-converter="coreApiMarshallingMessageConverter">
-        <jms:listener destination="ValidateEmailAddress" ref="consumer" method="validateEmailAddress" />
-    </jms:listener-container>
+    <!--
+        Case #1, handle different types of email-related requests on a single queue. Pipe the requests into
+        a service-activator used to invoke consumer.EmailValidatorEndpoint. Responses are automatically
+        delivered back to the request's ReplyTo queue.
+     -->
+     
+        <!-- handles incoming JMS-messages & their outgoing responses -->
+    <int-jms:inbound-gateway id="EmailValidationGateway" 
+        request-destination-name="Infrastructure.EmailValidation"
+        message-converter="coreApiMarshallingMessageConverter"
+        request-channel="emailValidationChannel" />
+    
+        <!-- internal representation of the 'Infrastructure.EmailValidation' JMS-queue -->    
+    <int:channel id="emailValidationChannel" />
+    
+        <!--
+            Service-activator linking the queue to our endpoint 'testing.consumer.EmailValidatorEndpoint'.
+            This also serves as a form of content-based routing, since different request-types are directed
+            to different endpoint-methods. 
+         -->
+    <int:service-activator input-channel="emailValidationChannel" ref="emailValidator" />
+    
+    
+    
+    <!-- 
+        Case #2 ???
+     -->
+    <!-- TODO implement error-channel + basic error-handling? -->
+
+
+    <!-- TODO implement the various cases here... synch request/reply + others -->
+        
     
     <!-- durable subscription on topic(s) using a wildcard-pattern -->
-    <jms:listener-container task-executor="jms-consumers" destination-type="durableTopic">
+    <!-- <jms:listener-container task-executor="jms-consumers" destination-type="durableTopic">
         <jms:listener destination="Stats.>" ref="consumer" method="eatStats"
             subscription="Statistics" />
-    </jms:listener-container>
+    </jms:listener-container> -->
+    
 </beans>

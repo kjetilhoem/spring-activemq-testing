@@ -29,7 +29,7 @@ public class ProducerJmsConfiguration {
     private MessageConverter messageConverter;
     
     @Bean
-    public JmsTemplate jmsTemplate() {
+    public JmsTemplate jmsTemplate() {  // TODO not required anymore?
         final JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory);
         template.setMessageConverter(messageConverter);

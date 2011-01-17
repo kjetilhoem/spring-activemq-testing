@@ -1,11 +1,20 @@
 package testing;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Method;
+
+import no.fovea.commons.text.StringUtils;
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import testing.producer.Producer;
+
 
 public class Launcher {
-    public static void main(String... args) {
+    public static void main(String... args) throws Exception {
         final boolean isProducer = args.length > 0
                 && "producer".equals(args[0]);
         
@@ -13,5 +22,42 @@ public class Launcher {
                 ? "testing.producer"
                 : "testing.consumer");
         ctx.registerShutdownHook();
+        
+        if (isProducer) {
+            runProducerLoop(ctx.getBean(Producer.class));
+        }
+    }
+    
+    private static void runProducerLoop(Producer producer) throws IOException {
+        final BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            while (true) {
+                System.out.print("> ");
+                final String line = r.readLine();
+                
+                if (StringUtils.isEmpty(line)) {
+                    continue;
+                }
+                
+                final String[] commands = line.split(" ");
+                
+                if ("exit".equals(commands[0])) {
+                    break;
+                } else if ("validateEmailAddress".equals(commands[0])) {
+                    producer.validateEmailAddress(commands[1]);
+                } else if ("validateEmailDomain".equals(commands[0])) {
+                    producer.validateEmailDomain(commands[1]);
+                } else {
+                    System.out.println("unknown command, valid commands 'exit' +");
+                    for (Method m : producer.getClass().getMethods()) {
+                        if (m.getDeclaringClass() == Producer.class) {
+                            System.out.println("\t" + m);
+                        }
+                    }
+                }
+            }
+        } finally {
+            System.exit(0);
+        }
     }
 }
