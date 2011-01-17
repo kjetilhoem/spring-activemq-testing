@@ -1,4 +1,11 @@
-    
+
+    - sett opp 3 separate messaging-scenarios, finn ut av hva som er best practive for køtyper osv, temp-queues? One response-queue pr. message?
+            - synchronized request/reply RPC-style
+        - asynch request/reply, using correlationId or just the response-data for matching..
+        - requests only, ala reporting / events
+        
+    <!-- TODO implement error-channel + basic error-handling? -->
+        
     
     - 11:25:40 [ WARN] listener.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'Infrastructure.ValidateEmailAddress' - trying to recover. Cause: Cannot publish to a deleted Destination: temp-queue://ID:ubuntu-53537-1295259901626-0:1:2
         - hvordan funker det her i praksis hvis man kjører med transactions & shit?
@@ -11,11 +18,6 @@
     - spring-integration krever spring 3.0.5
         
     - queues blir tømt etter server-restart... why?
-    
-    - sett opp 3 separate messaging-scenarios, finn ut av hva som er best practive for køtyper osv, temp-queues? One response-queue pr. message?
-            - synchronized request/reply RPC-style
-        - asynch request/reply, using correlationId or just the response-data for matching..
-        - requests only, ala reporting / events
     
     - TODO's
         ConnectionFactory props

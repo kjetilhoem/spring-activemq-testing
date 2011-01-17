@@ -47,6 +47,8 @@ public class Launcher {
                     producer.validateEmailAddress(commands[1]);
                 } else if ("validateEmailDomain".equals(commands[0])) {
                     producer.validateEmailDomain(commands[1]);
+                } else if ("createOrder".equals(commands[0])) {
+                    producer.createOrder(commands[1]);
                 } else {
                     System.out.println("unknown command, valid commands 'exit' +");
                     for (Method m : producer.getClass().getMethods()) {
@@ -56,6 +58,9 @@ public class Launcher {
                     }
                 }
             }
+        } catch (Exception e) {
+            System.out.println("producer died...");
+            e.printStackTrace();
         } finally {
             System.exit(0);
         }

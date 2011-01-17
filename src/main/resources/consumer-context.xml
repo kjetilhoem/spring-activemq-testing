@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans default-autowire="no" xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:jms="http://www.springframework.org/schema/jms"
     xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
     xmlns:int="http://www.springframework.org/schema/integration"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-    http://www.springframework.org/schema/jms
-    http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
     http://www.springframework.org/schema/integration/jms
     http://www.springframework.org/schema/integration/jms/spring-integration-jms-2.0.xsd
     http://www.springframework.org/schema/integration
     http://www.springframework.org/schema/integration/spring-integration-2.0.xsd">
     
-    
     <!--
         Case #1, handle different types of email-related requests on a single queue. Pipe the requests into
         a service-activator used to invoke consumer.EmailValidatorEndpoint. Responses are automatically
-        delivered back to the request's ReplyTo queue.
+        delivered back to the request's ReplyTo queue. Transactions are applicable for this scenario consumer-side,
+        but the actual messages here (email-validation) doesn't seem to require transactions =)
      -->
      
         <!-- handles incoming JMS-messages & their outgoing responses -->
@@ -35,23 +32,29 @@
             This also serves as a form of content-based routing, since different request-types are directed
             to different endpoint-methods. 
          -->
-    <int:service-activator input-channel="emailValidationChannel" ref="emailValidator" />
+    <int:service-activator input-channel="emailValidationChannel" ref="emailValidatorEndpoint" />
     
     
     
     <!-- 
-        Case #2 ???
+        Case #2, handle some important request-message, do some work in a local database & send a response-
+        message. In this case, transactions are applicable consumer-side. This scenario follows the same
+        pattern as #1.
      -->
-    <!-- TODO implement error-channel + basic error-handling? -->
-
-
-    <!-- TODO implement the various cases here... synch request/reply + others -->
-        
+        <!-- TODO, add acknowledge="transacted" transaction-manager="?" -->
+    <int-jms:inbound-gateway id="OrderGateway"
+        request-destination-name="Order.New"
+        request-channel="newOrderChannel" />
     
-    <!-- durable subscription on topic(s) using a wildcard-pattern -->
-    <!-- <jms:listener-container task-executor="jms-consumers" destination-type="durableTopic">
-        <jms:listener destination="Stats.>" ref="consumer" method="eatStats"
-            subscription="Statistics" />
-    </jms:listener-container> -->
+    <int:channel id="newOrderChannel" />
+    
+    <int:service-activator input-channel="newOrderChannel" ref="orderManagerEndpoint" />
+    
+    
+    
+    <!-- 
+        Case #3 asynch messages which require no response at all... inbound-channel-adapter?
+     -->    
+
     
 </beans>

@@ -7,9 +7,12 @@ import no.fovea.core.api.emailaddress.ValidateEmailDomainResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.integration.MessageChannel;
 import org.springframework.integration.MessageTimeoutException;
+import org.springframework.integration.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
+import testing.common.CreateOrderRequest;
 import testing.common.EmailValidator;
 
 
@@ -24,7 +27,13 @@ public class Producer {
     @Autowired
     private EmailValidator emailValidator;
     
+    @Autowired
+    private MessageChannel newOrderRequestChannel;
     
+    
+    /**
+     * Producer-side of case #1
+     */
     public void validateEmailAddress(String address) {
         try {
             final ValidateEmailAddressResponse resp = emailValidator.validateAddress(
@@ -41,6 +50,9 @@ public class Producer {
     }
     
     
+    /**
+     * Producer-side of case #1
+     */
     public void validateEmailDomain(String address) {
         final ValidateEmailDomainResponse resp = emailValidator.validateDomain(
             new ValidateEmailDomainRequest().withEmailAddress(address));
@@ -50,5 +62,21 @@ public class Producer {
         } else {
             logger.info("domain validated, resp: " + resp.getCleanedEmailAddress());
         }
+    }
+    
+    
+    /**
+     * Case #2, create the initial request. The response will be asynchronously handled by the
+     * OrderStatusListenerEndpoint.
+     */
+        // TODO should probably be @Transactional
+    public void createOrder(String orderId) {
+        final CreateOrderRequest req = new CreateOrderRequest(orderId);
+        
+        newOrderRequestChannel.send(MessageBuilder
+            .withPayload(req)
+            .build());
+        
+        // TODO try to persist into the db, should fail if it already exists or something, and the message shouldn't have been sent at all..
     }
 }

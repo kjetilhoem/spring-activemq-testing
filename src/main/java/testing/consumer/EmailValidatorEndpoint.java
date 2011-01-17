@@ -12,7 +12,7 @@ import org.springframework.integration.annotation.ServiceActivator;
 import testing.common.EmailValidator;
 
 
-@MessageEndpoint("emailValidator")
+@MessageEndpoint
 public class EmailValidatorEndpoint implements EmailValidator {
     
     private final Logger logger = Logger.getLogger(getClass());

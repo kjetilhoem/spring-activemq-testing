@@ -16,6 +16,7 @@
         Case #1, synchronous remote procedure call using JMS & tmp-queues for responses. This type of pattern
         is only applicable when the response isn't critical, i.e. when querying for data. If the producer goes
         down, the response-message will be lost.
+        In this case, transactions don't make sense at all on the client-side.
      -->
      
         <!-- Proxy for the EmailValidator interface, delivers messages to the 'emailValidationRequestChannel' -->
@@ -35,9 +36,36 @@
         request-destination-name="Infrastructure.EmailValidation"
         message-converter="coreApiMarshallingMessageConverter"
         receive-timeout="1000" /> <!-- the timeout-handling can be triggered by invoking 'validateEmailAddress timeout' -->
+        
+        
+    <!-- 
+        Case #2, dispatch an important request, and handle it's response asynchronously. In this scenario both
+        the request/reply could use transactions.
+     -->
+    <bean id="newOrderResponseQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="Producer.NewOrderResponse" />
+    </bean>
     
+    <int-jms:outbound-channel-adapter destination-name="Order.New"
+        channel="newOrderRequestChannel2" />
+        
+    <int:channel id="newOrderRequestChannel2" />
     
-    <!-- Case #2 ?? -->
-        <!-- TODO how about tranasctions on outbound-messages, doesn't really make sense in a request/reply scenario?? -->
+    <int-jms:header-enricher input-channel="newOrderRequestChannel" output-channel="newOrderRequestChannel2">
+        <int-jms:reply-to ref="newOrderResponseQueue" />
+    </int-jms:header-enricher>
+    
+    <int:channel id="newOrderRequestChannel" />
+    
+    <!-- TODO, dedicated queue could be replaced by generic queue with selector=appname? or maybe a topic subscription ala OrderCreated and OrderFailed? -->
+    <!-- TODO transactions please, acknowledge="transacted"? + transaction-manager= -->
+    <int-jms:message-driven-channel-adapter id="newOrderResponseAdapter"
+        destination="newOrderResponseQueue"
+        channel="newOrderResponseChannel" />
+        
+    <int:channel id="newOrderResponseChannel" />
+        
+    <int:service-activator input-channel="newOrderResponseChannel"
+        ref="orderStatusListenerEndpoint" />
          
 </beans>
