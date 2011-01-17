@@ -1,0 +1,3 @@
+Systemprops for the consumer:
+    -DuseExternalBroker=true/false -DJmsClientId=xxx (e.g. 'consumer')
+    

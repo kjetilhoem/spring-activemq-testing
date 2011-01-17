@@ -24,7 +24,6 @@ public class ProducerJmsConfiguration {
     public JmsTemplate jmsTemplate() {
         final JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory);
-        // TODO other defaults?
         return template;
     }
 }
