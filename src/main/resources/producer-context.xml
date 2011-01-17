@@ -42,27 +42,29 @@
         Case #2, dispatch an important request, and handle it's response asynchronously. In this scenario both
         the request/reply could use transactions.
      -->
-    <bean id="newOrderResponseQueue" class="org.apache.activemq.command.ActiveMQQueue">
-        <constructor-arg value="Producer.NewOrderResponse" />
-    </bean>
-    
-    <int-jms:outbound-channel-adapter destination-name="Order.New"
-        channel="newOrderRequestChannel2" />
+    <int-jms:outbound-channel-adapter destination-name="Orders.New"
+        channel="newOrderRequestChannel" />
         
-    <int:channel id="newOrderRequestChannel2" />
-    
-    <int-jms:header-enricher input-channel="newOrderRequestChannel" output-channel="newOrderRequestChannel2">
-        <int-jms:reply-to ref="newOrderResponseQueue" />
-    </int-jms:header-enricher>
-    
     <int:channel id="newOrderRequestChannel" />
     
-    <!-- TODO, dedicated queue could be replaced by generic queue with selector=appname? or maybe a topic subscription ala OrderCreated and OrderFailed? -->
     <!-- TODO transactions please, acknowledge="transacted"? + transaction-manager= -->
-    <int-jms:message-driven-channel-adapter id="newOrderResponseAdapter"
-        destination="newOrderResponseQueue"
-        channel="newOrderResponseChannel" />
-        
+    <int-jms:message-driven-channel-adapter channel="newOrderResponseChannel"
+        container="createdOrderListenerContainer" />
+
+        <!--
+            the message-drive-channel-adapter element doesn't have support for durable subscriptions,
+            the following bean is basically the regular spring-jms backend-class for message-driven beans,
+            we could probably wrap most of the boilerplate here in an abstract bean     
+         -->        
+    <bean id="createdOrderListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"
+            p:destinationName="Orders.Created"
+            p:subscriptionDurable="true"
+            p:durableSubscriptionName="CreatedOrders"
+            p:pubSubDomain="true">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!-- TODO transaction-manager here? -->
+    </bean>
+    
     <int:channel id="newOrderResponseChannel" />
         
     <int:service-activator input-channel="newOrderResponseChannel"

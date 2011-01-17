@@ -14,8 +14,8 @@
     <!--
         Case #1, handle different types of email-related requests on a single queue. Pipe the requests into
         a service-activator used to invoke consumer.EmailValidatorEndpoint. Responses are automatically
-        delivered back to the request's ReplyTo queue. Transactions are applicable for this scenario consumer-side,
-        but the actual messages here (email-validation) doesn't seem to require transactions =)
+        delivered back to the request's ReplyTo queue. Consumer-side transactions are applicable for this scenario,
+        but the actual messages here (email-validation) doesn't seem to require them =)
      -->
      
         <!-- handles incoming JMS-messages & their outgoing responses -->
@@ -38,17 +38,27 @@
     
     <!-- 
         Case #2, handle some important request-message, do some work in a local database & send a response-
-        message. In this case, transactions are applicable consumer-side. This scenario follows the same
+        message. In this case, transactions are applicable at both sides. This scenario follows the same
         pattern as #1.
      -->
-        <!-- TODO, add acknowledge="transacted" transaction-manager="?" -->
-    <int-jms:inbound-gateway id="OrderGateway"
-        request-destination-name="Order.New"
+        <!-- TODO, add acknowledge="transacted"? transaction-manager="?" -->
+        <!-- listens for incoming orders on the queue 'Orders.New' -->
+    <int-jms:inbound-gateway id="CreateOrderGateway"
+        request-destination-name="Orders.New"
         request-channel="newOrderChannel" />
     
     <int:channel id="newOrderChannel" />
     
-    <int:service-activator input-channel="newOrderChannel" ref="orderManagerEndpoint" />
+        <!-- invokes 'testing.consumer.OrderManagerEndpoint' with the order-creation requests -->
+    <int:service-activator input-channel="newOrderChannel" ref="orderManagerEndpoint"
+        output-channel="newOrderResponseChannel" />
+        
+    <int:channel id="newOrderResponseChannel" />
+    
+        <!-- publishes the order-creation responses to the topic 'Orders.Created' -->
+    <int-jms:outbound-channel-adapter channel="newOrderResponseChannel"
+        pub-sub-domain="true"
+        destination-name="Orders.Created" />
     
     
     
