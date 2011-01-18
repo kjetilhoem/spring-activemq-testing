@@ -6,7 +6,6 @@
         
     <!-- TODO implement error-channel + basic error-handling? -->
     
-    
     - 11:25:40 [ WARN] listener.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'Infrastructure.ValidateEmailAddress' - trying to recover. Cause: Cannot publish to a deleted Destination: temp-queue://ID:ubuntu-53537-1295259901626-0:1:2
         - hvordan funker det her i praksis hvis man kjører med transactions & shit?
 
@@ -43,9 +42,6 @@ Caused by: javax.jms.InvalidClientIDException: Broker: localhost - Client: produ
     at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:202)
     at java.lang.Thread.run(Thread.java:662)
     
-    - DefaultMessageListenerContainer is slow as hell... 1msg pr. sec????
-    
-    
     - Set up & use a MessageConverter
         - ErrorHandler, hva skjer client-side hvis f.eks marhsalling feiler? Hva vil vi at skal skje..
         
@@ -57,6 +53,8 @@ Caused by: javax.jms.InvalidClientIDException: Broker: localhost - Client: produ
         ConnectionFactory props
         
     - asynch producer flow control, connctionFactory.setProducerWindowSize(1024000);  -  http://activemq.apache.org/producer-flow-control.html
+    
+    - reduce xml-config for spring-integration mapping?
     
     - http://activemq.apache.org/activemq-message-properties.html
             messages are persistent by default, and has no expiry, this must be tweaked for jalla-messages

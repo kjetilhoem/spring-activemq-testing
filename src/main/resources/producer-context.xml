@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans default-autowire="no" xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+    xmlns:jms="http://www.springframework.org/schema/integration/jms"
     xmlns:int="http://www.springframework.org/schema/integration"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
@@ -32,7 +32,7 @@
             'Infrastructure.EmailValidation' queue. Responses are delivered to a tmp-queue & piped back
             to the gateway.
          -->
-    <int-jms:outbound-gateway request-channel="emailValidationRequestChannel"
+    <jms:outbound-gateway request-channel="emailValidationRequestChannel"
         request-destination-name="Infrastructure.EmailValidation"
         message-converter="coreApiMarshallingMessageConverter"
         receive-timeout="1000" /> <!-- the timeout-handling can be triggered by invoking 'validateEmailAddress timeout' -->
@@ -42,13 +42,13 @@
         Case #2, dispatch an important request, and handle it's response asynchronously. In this scenario both
         the request/reply could use transactions.
      -->
-    <int-jms:outbound-channel-adapter destination-name="Orders.New"
+    <jms:outbound-channel-adapter destination-name="Orders.New"
         channel="newOrderRequestChannel" />
         
     <int:channel id="newOrderRequestChannel" />
     
     <!-- TODO transactions please, acknowledge="transacted"? + transaction-manager= -->
-    <int-jms:message-driven-channel-adapter channel="newOrderResponseChannel"
+    <jms:message-driven-channel-adapter channel="newOrderResponseChannel"
         container="createdOrderListenerContainer" />
 
         <!--
@@ -69,5 +69,10 @@
         
     <int:service-activator input-channel="newOrderResponseChannel"
         ref="orderStatusListenerEndpoint" />
+        
+        
+    <!-- 
+        Case #3, dispatch
+     -->
          
 </beans>
