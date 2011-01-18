@@ -1,26 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans default-autowire="no" xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:jms="http://www.springframework.org/schema/jms" xmlns:task="http://www.springframework.org/schema/task"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+    xmlns:int="http://www.springframework.org/schema/integration"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-    http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
-    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
-    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/integration/jms
+    http://www.springframework.org/schema/integration/jms/spring-integration-jms-2.0.xsd
+    http://www.springframework.org/schema/integration
+    http://www.springframework.org/schema/integration/spring-integration-2.0.xsd">
     
-    <tx:annotation-driven />
+    <!--
+        Case #1, handle different types of email-related requests on a single queue. Pipe the requests into
+        a service-activator used to invoke consumer.EmailValidatorEndpoint. Responses are automatically
+        delivered back to the request's ReplyTo queue. Consumer-side transactions are applicable for this scenario,
+        but the actual messages here (email-validation) doesn't seem to require them =)
+     -->
+     
+        <!-- handles incoming JMS-messages & their outgoing responses -->
+    <int-jms:inbound-gateway id="EmailValidationGateway" 
+        request-destination-name="Infrastructure.EmailValidation"
+        message-converter="coreApiMarshallingMessageConverter"
+        request-channel="emailValidationChannel" />
     
-    <task:executor id="jms-consumers" keep-alive="60" pool-size="0-3" />
+        <!-- internal representation of the 'Infrastructure.EmailValidation' JMS-queue -->    
+    <int:channel id="emailValidationChannel" />
     
-    <!-- p2p listening on queues -->
-    <jms:listener-container task-executor="jms-consumers" message-converter="coreApiMarshallingMessageConverter">
-        <jms:listener destination="ValidateEmailAddress" ref="consumer" method="validateEmailAddress" />
-    </jms:listener-container>
+        <!--
+            Service-activator linking the queue to our endpoint 'testing.consumer.EmailValidatorEndpoint'.
+            This also serves as a form of content-based routing, since different request-types are directed
+            to different endpoint-methods. 
+         -->
+    <int:service-activator input-channel="emailValidationChannel" ref="emailValidatorEndpoint" />
     
-    <!-- durable subscription on topic(s) using a wildcard-pattern -->
-    <jms:listener-container task-executor="jms-consumers" destination-type="durableTopic" >
-        <jms:listener destination="Stats.>" ref="consumer" method="eatStats"
-            subscription="Statistics" />
-    </jms:listener-container>
+    
+    
+    <!-- 
+        Case #2, handle some important request-message, do some work in a local database & send a response-
+        message. In this case, transactions are applicable at both sides. This scenario follows the same
+        pattern as #1.
+     -->
+        <!-- TODO, add acknowledge="transacted"? transaction-manager="?" -->
+        <!-- listens for incoming orders on the queue 'Orders.New' -->
+    <!--int-jms:inbound-gateway id="CreateOrderGateway"
+        request-destination-name="Orders.New"
+        request-channel="newOrderChannel" /-->
+        
+    <int-jms:message-driven-channel-adapter channel="newOrderChannel" 
+        destination-name="Orders.New"/>
+    
+    <int:channel id="newOrderChannel" />
+    
+        <!-- invokes 'testing.consumer.OrderManagerEndpoint' with the order-creation requests -->
+    <int:service-activator input-channel="newOrderChannel" ref="orderManagerEndpoint"
+        output-channel="newOrderResponseChannel" />
+        
+    <int:channel id="newOrderResponseChannel" />
+    
+        <!-- publishes the order-creation responses to the topic 'Orders.Created' -->
+    <int-jms:outbound-channel-adapter channel="newOrderResponseChannel"
+        pub-sub-domain="true"
+        destination-name="Orders.Created" />
+    
+    
+    
+    <!-- 
+        Case #3 asynch messages which require no response at all... inbound-channel-adapter?
+     -->    
+
     
 </beans>

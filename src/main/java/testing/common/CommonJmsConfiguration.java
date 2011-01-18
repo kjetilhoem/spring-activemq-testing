@@ -1,11 +1,15 @@
 package testing.common;
 
-import javax.jms.Topic;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+import javax.jms.ConnectionFactory;
 
 import no.fovea.core.spring.config.MarshallerConfiguration;
+import no.fovea.reflection.ProxyFactory;
 
 import org.apache.activemq.ActiveMQXAConnectionFactory;
-import org.apache.activemq.command.ActiveMQTopic;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,16 +42,19 @@ public class CommonJmsConfiguration {
     }
     
     
-    @Bean//(initMethod="init")
+    @Bean
     public AtomikosConnectionFactoryBean connectionFactory() {
         
         AtomikosConnectionFactoryBean cf = new AtomikosConnectionFactoryBean();
+        
         cf.setXaConnectionFactory(createConnectionFactory());
-        cf.setUniqueResourceName("QUEUE_BROKER");
-        cf.setMaxPoolSize(1);
-        cf.setBorrowConnectionTimeout(60);
+        cf.setUniqueResourceName("XA_BROKER");
+        
+        cf.setMaxPoolSize(10);
+        //cf.setBorrowConnectionTimeout(60);
         
         return cf;
+        
         //return new PooledConnectionFactory(createConnectionFactory());
     }
     
@@ -55,25 +62,12 @@ public class CommonJmsConfiguration {
     private ActiveMQXAConnectionFactory createConnectionFactory() {
         final ActiveMQXAConnectionFactory factory = new ActiveMQXAConnectionFactory(brokerUrl());        
         if (jmsClientId != null) {
-            logger.info("setting JMS ClientID prefix to '" + jmsClientId + "'");
+            logger.info("setting JMS ClientID to '" + jmsClientId + "'");
             //factory.setClientID(jmsClientId);
-            factory.setClientIDPrefix(jmsClientId);
+            //factory.setClientIDPrefix(jmsClientId);
         }
         
-        // TODO check out the setters one this one.. probably something interesting here.. see ActiveMQConnectionFactoryFactoryBean for the most important ones?
         return factory;
-    }
-    
-    
-    @Bean
-    public Topic statsTopicA() {
-        return new ActiveMQTopic("Stats.A");
-    }
-    
-    
-    @Bean
-    public Topic statsTopicB() {
-        return new ActiveMQTopic("Stats.B");
     }
     
     
