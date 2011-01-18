@@ -11,6 +11,8 @@
     http://www.springframework.org/schema/integration
     http://www.springframework.org/schema/integration/spring-integration-2.0.xsd">
     
+    <import resource="common.xml" />
+    
     
     <!-- 
         Case #1, synchronous remote procedure call using JMS & tmp-queues for responses. This type of pattern
@@ -43,6 +45,8 @@
         Case #2, dispatch an important request, and handle it's response asynchronously. In this scenario both
         the request/reply could use transactions.
      -->
+     
+        <!-- outbound -->
     <int:gateway id="orderPublisher" service-interface="testing.producer.OrderPublisher"
         default-request-channel="newOrderRequestChannel" />
         
@@ -50,24 +54,14 @@
         
     <jms:outbound-channel-adapter channel="newOrderRequestChannel"
         destination-name="Orders.New" />
-    
-    <!-- TODO transactions please, acknowledge="transacted"? + transaction-manager= -->
-    <jms:message-driven-channel-adapter channel="newOrderResponseChannel"
-        container="createdOrderListenerContainer" />
-
-        <!--
-            the message-drive-channel-adapter element doesn't have support for durable subscriptions,
-            the following bean is basically the regular spring-jms backend-class for message-driven beans,
-            we could probably wrap most of the boilerplate here in an abstract bean     
-         -->        
-    <bean id="createdOrderListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"
-            p:destinationName="Orders.Created"
-            p:subscriptionDurable="true"
-            p:durableSubscriptionName="CreatedOrders"
-            p:pubSubDomain="true">
-        <property name="connectionFactory" ref="connectionFactory"/>
-        <!-- TODO transaction-manager here? -->
-    </bean>
+        
+        <!-- inbound -->
+    <jms:message-driven-channel-adapter container="newOrderResponseContainer"
+        channel="newOrderResponseChannel" />
+        
+    <bean id="newOrderResponseContainer" parent="abstractDurablePubSubMessageListenerContainer" 
+        p:destinationName="Orders.Created"
+        p:durableSubscriptionName="CreatedOrders" /> <!-- TODO change to abstractTransactionalDurablePub.. -->
     
     <int:channel id="newOrderResponseChannel" />
         

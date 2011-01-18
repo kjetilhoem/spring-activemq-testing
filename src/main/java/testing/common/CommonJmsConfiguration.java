@@ -6,7 +6,6 @@ import no.fovea.core.spring.config.MarshallerConfiguration;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.pool.PooledConnectionFactory;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -21,10 +20,8 @@ import org.springframework.oxm.Marshaller;
 @Import(MarshallerConfiguration.class)
 public class CommonJmsConfiguration {
     
-    private final Logger logger = Logger.getLogger(getClass());
-    
-    @Value("#{systemProperties['JmsClientId']}")
-    private String jmsClientId;
+    @Value("#{systemProperties['useXaConnectionFactory']}")
+    private Boolean useXaConnectionFactory;
     
     @Autowired
     private Marshaller coreApiMarshaller;
@@ -38,17 +35,27 @@ public class CommonJmsConfiguration {
     
     @Bean
     public ConnectionFactory connectionFactory() {
-        return new PooledConnectionFactory(createConnectionFactory());
+        return Boolean.TRUE.equals(useXaConnectionFactory)
+            ? createXaConnectionFactory()
+            : createPooledConnectionFactory();
+    }
+    
+    
+    private ConnectionFactory createPooledConnectionFactory() {
+        final PooledConnectionFactory pooledFactory = new PooledConnectionFactory(createConnectionFactory());
+        pooledFactory.setMaxConnections(10);
+        pooledFactory.setIdleTimeout(30000);
+        return pooledFactory;
+    }
+    
+    
+    private ConnectionFactory createXaConnectionFactory() {
+        throw new RuntimeException("not implemented");
     }
     
     
     private ActiveMQConnectionFactory createConnectionFactory() {
-        final ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory(brokerUrl());
-        if (jmsClientId != null) {
-            logger.info("setting JMS ClientID to '" + jmsClientId + "'");
-            factory.setClientID(jmsClientId);   // TODO might not be the correct place to set ClientID, see stacktrace in T.ODO
-        }
-        return factory;
+        return new ActiveMQConnectionFactory(brokerUrl());
     }
     
     

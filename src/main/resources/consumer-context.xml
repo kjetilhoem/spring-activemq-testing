@@ -11,6 +11,9 @@
     http://www.springframework.org/schema/integration
     http://www.springframework.org/schema/integration/spring-integration-2.0.xsd">
     
+    <import resource="common.xml" />
+    
+    
     <!--
         Case #1, handle different types of email-related requests on a single queue. Pipe the requests into
         a service-activator used to invoke consumer.EmailValidatorEndpoint. Responses are automatically
@@ -19,10 +22,12 @@
      -->
      
         <!-- handles incoming JMS-messages & their outgoing responses -->
-    <jms:inbound-gateway id="EmailValidationGateway" 
-        request-destination-name="Infrastructure.EmailValidation"
+    <jms:inbound-gateway id="EmailValidationGateway" container="emailValidationContainer"
         message-converter="coreApiMarshallingMessageConverter"
         request-channel="emailValidationChannel" />
+        
+    <bean id="emailValidationContainer" parent="abstractMessageListenerContainer"
+        p:destinationName="Infrastructure.EmailValidation" />
     
         <!-- internal representation of the 'Infrastructure.EmailValidation' JMS-queue -->    
     <int:channel id="emailValidationChannel" />
@@ -41,10 +46,12 @@
         message. In this case, transactions are applicable at both sides. This scenario follows the same
         pattern as #1.
      -->
-        <!-- TODO, add acknowledge="transacted"? transaction-manager="?" -->
         <!-- listens for incoming orders on the queue 'Orders.New' -->
-    <jms:message-driven-channel-adapter destination-name="Orders.New"
+    <jms:message-driven-channel-adapter container="newOrderContainer"
         channel="newOrderChannel" />
+        
+    <bean id="newOrderContainer" parent="abstractMessageListenerContainer"
+        p:destinationName="Orders.New" /> <!-- TODO, change to an abstractTransactionalMessageListenerContainer -->
     
     <int:channel id="newOrderChannel" />
     
@@ -64,21 +71,12 @@
     <!-- 
         Case #3 listen for stats/events on all Stats.> topics
      -->    
-    <jms:message-driven-channel-adapter container="statisticsListenerContainer"
+    <jms:message-driven-channel-adapter container="statsContainer"
         channel="statsChannel" />
         
-        <!--
-            the message-drive-channel-adapter element doesn't have support for durable subscriptions,
-            the following bean is basically the regular spring-jms backend-class for message-driven beans,
-            we could probably wrap most of the boilerplate here in an abstract bean     
-         -->        
-    <bean id="statisticsListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"
-            p:destinationName="Stats.>"
-            p:subscriptionDurable="true"
-            p:durableSubscriptionName="AllStats"
-            p:pubSubDomain="true">
-        <property name="connectionFactory" ref="connectionFactory"/>
-    </bean>
+    <bean id="statsContainer" parent="abstractDurablePubSubMessageListenerContainer" 
+        p:destinationName="Stats.>"
+        p:durableSubscriptionName="AllStats" /> <!-- TODO change to abstractTransactionalDurablePub.. -->
         
     <int:channel id="statsChannel" />
     
