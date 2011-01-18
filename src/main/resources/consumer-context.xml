@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans default-autowire="no" xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+    xmlns:jms="http://www.springframework.org/schema/integration/jms"
     xmlns:int="http://www.springframework.org/schema/integration"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
@@ -19,7 +19,7 @@
      -->
      
         <!-- handles incoming JMS-messages & their outgoing responses -->
-    <int-jms:inbound-gateway id="EmailValidationGateway" 
+    <jms:inbound-gateway id="EmailValidationGateway" 
         request-destination-name="Infrastructure.EmailValidation"
         message-converter="coreApiMarshallingMessageConverter"
         request-channel="emailValidationChannel" />
@@ -43,12 +43,8 @@
      -->
         <!-- TODO, add acknowledge="transacted"? transaction-manager="?" -->
         <!-- listens for incoming orders on the queue 'Orders.New' -->
-    <!--int-jms:inbound-gateway id="CreateOrderGateway"
-        request-destination-name="Orders.New"
-        request-channel="newOrderChannel" /-->
-        
-    <int-jms:message-driven-channel-adapter channel="newOrderChannel" 
-        destination-name="Orders.New"/>
+    <jms:message-driven-channel-adapter destination-name="Orders.New"
+        channel="newOrderChannel" />
     
     <int:channel id="newOrderChannel" />
     
@@ -59,15 +55,34 @@
     <int:channel id="newOrderResponseChannel" />
     
         <!-- publishes the order-creation responses to the topic 'Orders.Created' -->
-    <int-jms:outbound-channel-adapter channel="newOrderResponseChannel"
+    <jms:outbound-channel-adapter channel="newOrderResponseChannel"
         pub-sub-domain="true"
         destination-name="Orders.Created" />
     
     
     
     <!-- 
-        Case #3 asynch messages which require no response at all... inbound-channel-adapter?
+        Case #3 listen for stats/events on all Stats.> topics
      -->    
-
+    <jms:message-driven-channel-adapter container="statisticsListenerContainer"
+        channel="statsChannel" />
+        
+        <!--
+            the message-drive-channel-adapter element doesn't have support for durable subscriptions,
+            the following bean is basically the regular spring-jms backend-class for message-driven beans,
+            we could probably wrap most of the boilerplate here in an abstract bean     
+         -->        
+    <bean id="statisticsListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"
+            p:destinationName="Stats.>"
+            p:subscriptionDurable="true"
+            p:durableSubscriptionName="AllStats"
+            p:pubSubDomain="true"
+            p:clientId="#{systemProperties['JmsClientId']}">
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+        
+    <int:channel id="statsChannel" />
+    
+    <int:service-activator input-channel="statsChannel" ref="statsEndpoint" />
     
 </beans>

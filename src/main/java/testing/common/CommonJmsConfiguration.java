@@ -1,13 +1,6 @@
 package testing.common;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
-import javax.jms.ConnectionFactory;
-
 import no.fovea.core.spring.config.MarshallerConfiguration;
-import no.fovea.reflection.ProxyFactory;
 
 import org.apache.activemq.ActiveMQXAConnectionFactory;
 import org.apache.log4j.Logger;
