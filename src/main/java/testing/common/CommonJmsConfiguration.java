@@ -1,12 +1,10 @@
 package testing.common;
 
 import javax.jms.ConnectionFactory;
-import javax.jms.Topic;
 
 import no.fovea.core.spring.config.MarshallerConfiguration;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.activemq.command.ActiveMQTopic;
 import org.apache.activemq.pool.PooledConnectionFactory;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,22 +46,9 @@ public class CommonJmsConfiguration {
         final ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory(brokerUrl());
         if (jmsClientId != null) {
             logger.info("setting JMS ClientID to '" + jmsClientId + "'");
-            factory.setClientID(jmsClientId);
+            factory.setClientID(jmsClientId);   // TODO might not be the correct place to set ClientID, see stacktrace in T.ODO
         }
-        // TODO check out the setters one this one.. probably something interesting here.. see ActiveMQConnectionFactoryFactoryBean for the most important ones?
         return factory;
-    }
-    
-    
-    @Bean
-    public Topic statsTopicA() {
-        return new ActiveMQTopic("Stats.A");
-    }
-    
-    
-    @Bean
-    public Topic statsTopicB() {
-        return new ActiveMQTopic("Stats.B");
     }
     
     

@@ -19,6 +19,6 @@ public class OrderManagerEndpoint {
         logger.info("received request for creating a new order, id: " + req.orderId);
         // TODO try to persist in db, should fail if the orderId is duplicate etc..
         boolean success = true;
-        return new CreateOrderResponse(req.orderId, success);   // TODO the reply's orderId could possibly be swapped for a correlationId in the request-message??
+        return new CreateOrderResponse(req.orderId, success);
     }
 }
