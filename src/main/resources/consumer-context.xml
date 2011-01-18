@@ -12,17 +12,15 @@
     
     <task:executor id="jms-consumers" keep-alive="60" pool-size="0-3" />
     
-    <!-- TODO this setup can probably be done using spring-integration as well, but it may be overkill??? -->
-    <!-- TODO errorHandler / DestinationResolver / TransactionManager / MessageConverter etc... -->
-    
     <!-- p2p listening on queues -->
-    <jms:listener-container task-executor="jms-consumers"  >
-        <jms:listener destination="Echo" ref="consumer" method="echo" />
+    <jms:listener-container task-executor="jms-consumers" message-converter="coreApiMarshallingMessageConverter">
+        <jms:listener destination="ValidateEmailAddress" ref="consumer" method="validateEmailAddress" />
     </jms:listener-container>
     
     <!-- durable subscription on topic(s) using a wildcard-pattern -->
-    <jms:listener-container task-executor="jms-consumers" destination-type="durableTopic">
+    <jms:listener-container task-executor="jms-consumers" destination-type="durableTopic" >
         <jms:listener destination="Stats.>" ref="consumer" method="eatStats"
             subscription="Statistics" />
     </jms:listener-container>
+    
 </beans>

@@ -1,7 +1,22 @@
-
-    - fix project TODO's java/xml
-    - clean up ActiveMQ dependencies..
+    
+    - spring-integration krever spring 3.0.5
+        - start m/namespace changes ... http\://www.springframework.org/schema/jms/spring-jms.xsd
+        - continue at http://static.springsource.org/spring-integration/reference/htmlsingle/#jms-message-driven-channel-adapter
+    
     - Set up & use a MessageConverter
+        - ErrorHandler, hva skjer client-side hvis f.eks marhsalling feiler? Hva vil vi at skal skje..
+        
+    - queues blir tømt etter server-restart... why?
+    
+    - sett opp 3 separate messaging-scenarios, finn ut av hva som er best practive for køtyper osv, temp-queues? One response-queue pr. message?
+        - synchronized request/reply RPC-style
+        - asynch request/reply, using correlationId or just the response-data for matching..
+        - requests only, ala reporting / events
+    
+    - TODO's
+        <jms:listener-container -- check out <!-- TODO errorHandler / DestinationResolver -->
+        ConnectionFactory props
+        
     - asynch producer flow control, connctionFactory.setProducerWindowSize(1024000);  -  http://activemq.apache.org/producer-flow-control.html
     
     - http://activemq.apache.org/activemq-message-properties.html
@@ -11,10 +26,10 @@
             scheduled messages, seems like a cool idea =)
             
     - entity-storage, bra måte å unngå XA + http://activemq.apache.org/should-i-use-xa.html / Message.getJMSRedelivered()
-            kan implementeres som en AOP proxy, i.e.
-                MessageHandler {
-                    handle(message)
-                    isDuplicate(message) : boolean
-                }
+        kan implementeres som en AOP proxy, i.e.
+            MessageHandler {
+                handle(message)
+                isDuplicate(message) : boolean
+            }
 
-                hvis Message.getJMSRedelivered(), gjør et kall til isDuplicate() for å sjekke om meldingen allerede er håndtert..
+            hvis Message.getJMSRedelivered(), gjør et kall til isDuplicate() for å sjekke om meldingen allerede er håndtert..

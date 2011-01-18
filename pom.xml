@@ -16,13 +16,13 @@
     <packaging>jar</packaging>
     <version>1.0.0-SNAPSHOT</version>
     
-
+    
     <properties>
         <fovea-jee-version>1.0.0-SNAPSHOT</fovea-jee-version>
         <fovea-commons-jee-version>1.0.0-SNAPSHOT</fovea-commons-jee-version>
-
-        <spring-version>3.0.1.RELEASE</spring-version>
-        <activemq-version>5.4.2</activemq-version>
+        <tomcat-version>6.0.20-fovea-01-SNAPSHOT</tomcat-version>
+        <activemq-version>5.4.2</activemq-version>  <!-- TODO should be moved -->
+        <spring-integration-version>2.0.1.RELEASE</spring-integration-version>
     </properties>
 
 
@@ -44,19 +44,43 @@
             <artifactId>fovea-commons-jee</artifactId>
             <version>${fovea-commons-jee-version}</version>
         </dependency>
-
-        <!-- spring/jms -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jms</artifactId>
-            <version>${spring-version}</version>
+            <groupId>no.fovea.maven</groupId>
+            <artifactId>fovea-tomcat-extra</artifactId>
+            <version>${tomcat-version}</version>
+            <type>pom</type>
+            <!-- <scope>provided</scope> provided doesn't apply here since we don't deploy this mini-app on our tomcat.. -->
+        </dependency>
+        <dependency>
+            <groupId>no.fovea.core</groupId>
+            <artifactId>core-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
-        <!-- active-mq -->
+        <!-- active-mq, TODO this dependency belongs in commons-jee -->
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-spring</artifactId>
+            <artifactId>activemq-spring</artifactId>    <!-- TODO are we using any of the custom spring-classes? -->
             <version>${activemq-version}</version>
+            <exclusions>
+                <exclusion>
+                    <!-- TODO not sure if this is really safe.. but lets give it a try.. -->
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-jta_1.0.1B_spec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <!-- TODO depends on spring-test as compile, hopefully just a wrong scope... -->
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-test</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <!-- spring-integration, also belongs in commons-jee? -->
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-jms</artifactId>
+            <version>${spring-integration-version}</version>
         </dependency>
         
         <!-- atomikos -->
@@ -104,4 +128,3 @@ encoding/<project>=UTF-8]]>
         </plugins>
     </build>
 </project>
-

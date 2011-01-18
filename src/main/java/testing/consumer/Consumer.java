@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.sql.DataSource;
+import no.fovea.core.api.emailaddress.ValidateEmailAddressRequest;
+import no.fovea.core.api.emailaddress.ValidateEmailAddressResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +22,12 @@ public class Consumer {
     
     
     /**
-     * The fantastic echo-service =), p2p, listens on a queue & responds to the ReplyTo queue
+     * Mock-implementation of core-api's EmailAddressService.validateEmailAddress(). Listens on a queue &
+     * responds to the ReplyTo queue.
      */
-    public String echo(String value) {
-        // logger.info("echoing '" + value + "'");
-        return value;
+    public ValidateEmailAddressResponse validateEmailAddress(ValidateEmailAddressRequest req) {
+        logger.info("validating: " + req.getEmailAddress());
+        return new ValidateEmailAddressResponse().withCleanedEmailAddress(req.getEmailAddress());
     }
     
     
@@ -46,12 +49,12 @@ public class Consumer {
             conn = dataSource.getConnection();
             logger.info("DataSource class: " + dataSource.getClass());
             Statement s = conn.createStatement();
-            s.executeUpdate("insert into stat values('"+stat+"')");
+            s.executeUpdate("update stat set val='"+stat+"' where id=100");
             
-            logger.info("Current contents of table 'stat':");
-            ResultSet rs = s.executeQuery("select * from stat");  
+            logger.info("Current contents of table 'stat':");            
+            ResultSet rs = s.executeQuery("select * from stat");
             while (rs.next()) {
-                logger.info(rs.getString(1));
+                logger.info("Row: " + rs.getString(1) + ", " + rs.getString(2));
             }
             
             s.close();
@@ -62,25 +65,26 @@ public class Consumer {
         }
         
         logger.info("stats: " + stat);
-        
-        
     }
     
     
     public void checkTables() {
+        logger.info("checking tables...");
         Connection conn = null;
         try {
             conn = dataSource.getConnection();
             Statement s = conn.createStatement();
             try {
                 s.executeQuery("select * from stat");
+                logger.info("table already there.");
+                
             } catch (SQLException e) { //table not there => create it
                 logger.info("Creating stat table...");
-                s.executeUpdate("create table stat (s varchar(20))");
-                s.executeUpdate("insert into stat values ('hei')");
+                s.executeUpdate("create table stat (id numeric(11), val varchar(20))");
+                s.executeUpdate("insert into stat values (100, 'hei')");
                 ResultSet rs = s.executeQuery("select * from stat");
                 while (rs.next()) {
-                    logger.info("Row: " + rs.getString(1));
+                    logger.info("Row: " + rs.getString(1) + ", " + rs.getString(2));
                 }
             }
             
