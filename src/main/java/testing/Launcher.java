@@ -49,8 +49,15 @@ public class Launcher {
                     producer.validateEmailDomain(commands[1]);
                 } else if ("createOrder".equals(commands[0])) {
                     producer.createOrder(commands[1]);
+                } else if ("publishEvent".equals(commands[0])) {
+                    producer.publishEvent(commands[1], commands[2]);
+                } else if ("goCrazy".equals(commands[0])) {
+                    for (int i = 0; i < 1000; i++) {
+                        producer.createOrder("order#" + i);
+                        producer.publishEvent("attempting to create order#" + i, null);
+                    }
                 } else {
-                    System.out.println("unknown command, valid commands 'exit' +");
+                    System.out.println("unknown command, valid commands 'exit', 'goCrazy' +");
                     for (Method m : producer.getClass().getMethods()) {
                         if (m.getDeclaringClass() == Producer.class) {
                             System.out.println("\t" + m);

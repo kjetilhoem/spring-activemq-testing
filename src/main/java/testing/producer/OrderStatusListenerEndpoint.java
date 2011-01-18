@@ -1,6 +1,7 @@
 package testing.producer;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.integration.annotation.MessageEndpoint;
 import org.springframework.integration.annotation.ServiceActivator;
 
@@ -12,6 +13,9 @@ public class OrderStatusListenerEndpoint {
     
     private final Logger logger = Logger.getLogger(getClass());
     
+    @Autowired
+    private StatsReporter statsReporter;
+    
     
     @ServiceActivator
         // TODO @Transactional
@@ -21,6 +25,7 @@ public class OrderStatusListenerEndpoint {
         
         if (resp.success) {
             logger.info("successfully created order " + resp.orderId);
+            statsReporter.reportSimpleEvent("order " + resp.orderId + " was successfully created", null);
             // TODO update db-order
         } else {
             logger.warn("order " + resp.orderId + " wasn't created");

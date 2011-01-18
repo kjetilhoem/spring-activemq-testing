@@ -38,14 +38,18 @@
         receive-timeout="1000" /> <!-- the timeout-handling can be triggered by invoking 'validateEmailAddress timeout' -->
         
         
+        
     <!-- 
         Case #2, dispatch an important request, and handle it's response asynchronously. In this scenario both
         the request/reply could use transactions.
      -->
-    <jms:outbound-channel-adapter destination-name="Orders.New"
-        channel="newOrderRequestChannel" />
+    <int:gateway id="orderPublisher" service-interface="testing.producer.OrderPublisher"
+        default-request-channel="newOrderRequestChannel" />
         
     <int:channel id="newOrderRequestChannel" />
+        
+    <jms:outbound-channel-adapter channel="newOrderRequestChannel"
+        destination-name="Orders.New" />
     
     <!-- TODO transactions please, acknowledge="transacted"? + transaction-manager= -->
     <jms:message-driven-channel-adapter channel="newOrderResponseChannel"
@@ -71,8 +75,17 @@
         ref="orderStatusListenerEndpoint" />
         
         
+        
     <!-- 
-        Case #3, dispatch
+        Case #3, dispatch messages to a topic, event-style
      -->
+    <int:gateway id="statsReporter" service-interface="testing.producer.StatsReporter"
+        default-request-channel="statsChannel" />
+     
+    <int:channel id="statsChannel" />
+    
+    <jms:outbound-channel-adapter channel="statsChannel"
+        destination-name="Stats.Producer"
+        pub-sub-domain="true" />
          
 </beans>

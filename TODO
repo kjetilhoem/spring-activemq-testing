@@ -1,8 +1,3 @@
-
-    - sett opp 3 separate messaging-scenarios, finn ut av hva som er best practive for køtyper osv, temp-queues? One response-queue pr. message?
-            - synchronized request/reply RPC-style
-            - asynch request/reply, using correlationId or just the response-data for matching..
-        - requests only, ala reporting / events
         
     <!-- TODO implement error-channel + basic error-handling? -->
     

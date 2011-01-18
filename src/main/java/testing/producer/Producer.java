@@ -7,9 +7,7 @@ import no.fovea.core.api.emailaddress.ValidateEmailDomainResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.integration.MessageChannel;
 import org.springframework.integration.MessageTimeoutException;
-import org.springframework.integration.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
 import testing.common.CreateOrderRequest;
@@ -28,7 +26,10 @@ public class Producer {
     private EmailValidator emailValidator;
     
     @Autowired
-    private MessageChannel newOrderRequestChannel;
+    private OrderPublisher orderPublisher;
+    
+    @Autowired
+    private StatsReporter statsReporter;
     
     
     /**
@@ -73,10 +74,16 @@ public class Producer {
     public void createOrder(String orderId) {
         final CreateOrderRequest req = new CreateOrderRequest(orderId);
         
-        newOrderRequestChannel.send(MessageBuilder
-            .withPayload(req)
-            .build());
+        orderPublisher.createOrder(req);
         
         // TODO try to persist into the db, should fail if it already exists or something, and the message shouldn't have been sent at all..
+    }
+    
+    
+    /**
+     * Case #3, publish an event.
+     */
+    public void publishEvent(String data, String importantHeaderValue) {
+        statsReporter.reportSimpleEvent(data, importantHeaderValue);
     }
 }

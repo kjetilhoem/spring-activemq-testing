@@ -62,8 +62,26 @@
     
     
     <!-- 
-        Case #3 asynch messages which require no response at all... inbound-channel-adapter?
+        Case #3 listen for stats/events on all Stats.> topics
      -->    
-
+    <jms:message-driven-channel-adapter container="statisticsListenerContainer"
+        channel="statsChannel" />
+        
+        <!--
+            the message-drive-channel-adapter element doesn't have support for durable subscriptions,
+            the following bean is basically the regular spring-jms backend-class for message-driven beans,
+            we could probably wrap most of the boilerplate here in an abstract bean     
+         -->        
+    <bean id="statisticsListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"
+            p:destinationName="Stats.>"
+            p:subscriptionDurable="true"
+            p:durableSubscriptionName="AllStats"
+            p:pubSubDomain="true">
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+        
+    <int:channel id="statsChannel" />
+    
+    <int:service-activator input-channel="statsChannel" ref="statsEndpoint" />
     
 </beans>
