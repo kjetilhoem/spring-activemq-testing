@@ -27618,3 +27618,826 @@ Caused by: java.net.ConnectException: Connection refused
 11-01-27 15:30:36,367 [Thread-1] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog103.log
 11-01-27 15:30:36,368 [Thread-1] Configuration: removed resource DS1
 11-01-27 15:30:36,368 [Thread-1] Configuration: removed resource DS2
+11-01-27 16:05:42,074 [main] Starting read of logfile /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog103.log
+11-01-27 16:05:42,111 [main] Done read of logfile
+11-01-27 16:05:42,112 [main] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog103.log
+11-01-27 16:05:42,116 [main] USING core version: 3.6.4
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.console_file_name = tm.out
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.console_file_count = 1
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.automatic_resource_registration = true
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.client_demarcation = false
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.threaded_2pc = true
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.serial_jta_transactions = true   
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.log_base_dir = ./atomikos/log_base_dir/
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.console_log_level = DEBUG
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.max_actives = 50
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.checkpoint_interval = 500
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.enable_logging = true
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.output_dir = ./atomikos/output_dir/
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.log_base_name = tmlog
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.console_file_limit = -1
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.max_timeout = 300000
+11-01-27 16:05:42,117 [main] USING com.atomikos.icatch.tm_unique_name = 127.0.1.1.tm
+11-01-27 16:05:42,118 [main] USING java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+11-01-27 16:05:42,118 [main] USING java.naming.provider.url = rmi://localhost:1099
+11-01-27 16:05:42,118 [main] USING com.atomikos.icatch.service = com.atomikos.icatch.standalone.UserTransactionServiceFactory
+11-01-27 16:05:42,118 [main] USING com.atomikos.icatch.force_shutdown_on_vm_exit = false
+11-01-27 16:05:42,118 [main] USING com.atomikos.icatch.default_jta_timeout = 10000
+11-01-27 16:05:42,210 [main] Transaction Service: Entering shutdown ( true )...
+11-01-27 16:05:42,210 [main] Transaction Service: Shutdown acquired lock on waiter.
+11-01-27 16:05:42,211 [main] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog104.log
+11-01-27 16:05:42,213 [main] TaskManager: initializing...
+11-01-27 16:05:42,214 [main] THREADS: using JDK thread pooling...
+11-01-27 16:05:42,220 [main] THREADS: using executor class com.atomikos.icatch.imp.thread.Java15ExecutorFactory$Executor
+11-01-27 16:05:42,266 [main] Starting read of logfile /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog104.log
+11-01-27 16:05:42,266 [main] Done read of logfile
+11-01-27 16:05:42,266 [main] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog104.log
+11-01-27 16:05:42,296 [main] USING core version: 3.6.4
+11-01-27 16:05:42,296 [main] USING com.atomikos.icatch.console_file_name = tm.out
+11-01-27 16:05:42,296 [main] USING com.atomikos.icatch.console_file_count = 1
+11-01-27 16:05:42,296 [main] USING com.atomikos.icatch.automatic_resource_registration = true
+11-01-27 16:05:42,296 [main] USING com.atomikos.icatch.client_demarcation = false
+11-01-27 16:05:42,301 [main] USING com.atomikos.icatch.threaded_2pc = true
+11-01-27 16:05:42,301 [main] USING com.atomikos.icatch.serial_jta_transactions = true   
+11-01-27 16:05:42,301 [main] USING com.atomikos.icatch.log_base_dir = ./atomikos/log_base_dir/
+11-01-27 16:05:42,301 [main] USING com.atomikos.icatch.console_log_level = DEBUG
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.max_actives = 50
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.checkpoint_interval = 500
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.enable_logging = true
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.output_dir = ./atomikos/output_dir/
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.log_base_name = tmlog
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.console_file_limit = -1
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.max_timeout = 300000
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.tm_unique_name = 127.0.1.1.tm
+11-01-27 16:05:42,302 [main] USING java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+11-01-27 16:05:42,302 [main] USING java.naming.provider.url = rmi://localhost:1099
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.service = com.atomikos.icatch.standalone.UserTransactionServiceFactory
+11-01-27 16:05:42,302 [main] USING com.atomikos.icatch.force_shutdown_on_vm_exit = false
+11-01-27 16:05:42,303 [main] USING com.atomikos.icatch.default_jta_timeout = 10000
+11-01-27 16:05:42,320 [main] Transaction Service: Entering shutdown ( true )...
+11-01-27 16:05:42,320 [main] Transaction Service: Shutdown acquired lock on waiter.
+11-01-27 16:05:42,320 [main] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog105.log
+11-01-27 16:05:42,373 [main] Starting read of logfile /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog105.log
+11-01-27 16:05:42,374 [main] Done read of logfile
+11-01-27 16:05:42,374 [main] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog105.log
+11-01-27 16:05:42,377 [Finalizer] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog105.log
+11-01-27 16:05:42,377 [main] USING core version: 3.6.4
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.console_file_name = tm.out
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.console_file_count = 1
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.automatic_resource_registration = true
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.client_demarcation = false
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.threaded_2pc = true
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.serial_jta_transactions = true   
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.log_base_dir = ./atomikos/log_base_dir/
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.console_log_level = DEBUG
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.max_actives = 50
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.checkpoint_interval = 500
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.enable_logging = true
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.output_dir = ./atomikos/output_dir/
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.log_base_name = tmlog
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.console_file_limit = -1
+11-01-27 16:05:42,378 [main] USING com.atomikos.icatch.max_timeout = 300000
+11-01-27 16:05:42,379 [main] USING com.atomikos.icatch.tm_unique_name = 127.0.1.1.tm
+11-01-27 16:05:42,379 [main] USING java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+11-01-27 16:05:42,379 [main] USING java.naming.provider.url = rmi://localhost:1099
+11-01-27 16:05:42,379 [main] USING com.atomikos.icatch.service = com.atomikos.icatch.standalone.UserTransactionServiceFactory
+11-01-27 16:05:42,379 [main] USING com.atomikos.icatch.force_shutdown_on_vm_exit = false
+11-01-27 16:05:42,379 [main] USING com.atomikos.icatch.default_jta_timeout = 10000
+11-01-27 16:05:42,386 [main] Transaction Service: Entering shutdown ( true )...
+11-01-27 16:05:42,386 [main] Transaction Service: Shutdown acquired lock on waiter.
+11-01-27 16:05:42,386 [main] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog106.log
+11-01-27 16:06:57,901 [main] Starting read of logfile /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog106.log
+11-01-27 16:06:57,901 [main] Done read of logfile
+11-01-27 16:06:57,901 [main] Logfile closed: /home/dev/Desktop/projs/./atomikos/log_base_dir/tmlog106.log
+11-01-27 16:06:57,914 [main] USING core version: 3.6.4
+11-01-27 16:06:57,914 [main] USING com.atomikos.icatch.console_file_name = tm.out
+11-01-27 16:06:57,914 [main] USING com.atomikos.icatch.console_file_count = 1
+11-01-27 16:06:57,914 [main] USING com.atomikos.icatch.automatic_resource_registration = true
+11-01-27 16:06:57,914 [main] USING com.atomikos.icatch.client_demarcation = false
+11-01-27 16:06:57,914 [main] USING com.atomikos.icatch.threaded_2pc = true
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.serial_jta_transactions = true   
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.log_base_dir = ./atomikos/log_base_dir/
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.console_log_level = DEBUG
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.max_actives = 50
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.checkpoint_interval = 500
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.enable_logging = true
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.output_dir = ./atomikos/output_dir/
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.log_base_name = tmlog
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.console_file_limit = -1
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.max_timeout = 300000
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.tm_unique_name = 127.0.1.1.tm
+11-01-27 16:06:57,915 [main] USING java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+11-01-27 16:06:57,915 [main] USING java.naming.provider.url = rmi://localhost:1099
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.service = com.atomikos.icatch.standalone.UserTransactionServiceFactory
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.force_shutdown_on_vm_exit = false
+11-01-27 16:06:57,915 [main] USING com.atomikos.icatch.default_jta_timeout = 10000
+11-01-27 16:06:58,003 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:58,003 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:58,013 [main] AtomikosDataSoureBean 'DS1': initializing with [ xaDataSourceClassName=null, uniqueResourceName=DS1, maxPoolSize=1, minPoolSize=1, borrowConnectionTimeout=30, maxIdleTime=60, reapTimeout=0, maintenanceInterval=60, testQuery=null, xaProperties=[] loginTimeout=0]
+11-01-27 16:06:58,023 [main] Configuration: adding resource DS1
+11-01-27 16:06:58,024 [main] Installing recovery service on resource DS1
+11-01-27 16:06:58,024 [main] DS1: refreshing XAResource...
+11-01-27 16:06:58,677 [main] DS1: refreshed XAResource
+11-01-27 16:06:58,677 [main] recovery initiated for resource DS1 with branchIdentifier 127.0.1.1.tm
+11-01-27 16:06:58,677 [main] endRecovery() done for resource DS1
+11-01-27 16:06:58,677 [main] Configuration: added resource DS1
+11-01-27 16:06:58,678 [main] atomikos connection pool 'DS1': initializing...
+11-01-27 16:06:58,686 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): registering listener atomikos connection pool 'DS1'
+11-01-27 16:06:58,689 [main] TaskManager: initializing...
+11-01-27 16:06:58,690 [main] THREADS: using JDK thread pooling...
+11-01-27 16:06:58,694 [main] THREADS: using executor class com.atomikos.icatch.imp.thread.Java15ExecutorFactory$Executor
+11-01-27 16:06:58,694 [main] (1.5) executing task: com.atomikos.timing.PooledAlarmTimer@15f157b
+11-01-27 16:06:58,695 [main] ThreadFactory: creating new thread: Atomikos:0
+11-01-27 16:06:58,695 [main] AtomikosDataSoureBean 'DS1': init done.
+11-01-27 16:06:58,695 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:58,695 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:58,695 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:58,695 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:58,695 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:58,695 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:58,699 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:58,701 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@1dc64a5
+11-01-27 16:06:58,710 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:58,710 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:58,713 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:58,713 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:58,713 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:58,713 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:58,713 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:58,713 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:58,713 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:58,713 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:58,714 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:58,714 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:58,714 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:58,714 [main] a TransactionContext: changing to state null
+11-01-27 16:06:58,714 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:58,718 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@1f7708
+11-01-27 16:06:59,073 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,073 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,073 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,073 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,073 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@174aa60
+11-01-27 16:06:59,073 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@174aa60
+11-01-27 16:06:59,073 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,074 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,074 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,074 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,074 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,074 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,074 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,074 [main] AtomikosDataSoureBean 'DS2': getConnection ( null )...
+11-01-27 16:06:59,074 [main] AtomikosDataSoureBean 'DS2': init...
+11-01-27 16:06:59,074 [main] AtomikosDataSoureBean 'DS2': initializing with [ xaDataSourceClassName=null, uniqueResourceName=DS2, maxPoolSize=1, minPoolSize=1, borrowConnectionTimeout=30, maxIdleTime=60, reapTimeout=0, maintenanceInterval=60, testQuery=null, xaProperties=[] loginTimeout=0]
+11-01-27 16:06:59,075 [main] Configuration: adding resource DS2
+11-01-27 16:06:59,075 [main] Installing recovery service on resource DS2
+11-01-27 16:06:59,075 [main] recovery initiated for resource DS1 with branchIdentifier 127.0.1.1.tm
+11-01-27 16:06:59,075 [main] endRecovery() done for resource DS1
+11-01-27 16:06:59,075 [main] DS2: refreshing XAResource...
+11-01-27 16:06:59,135 [main] DS2: refreshed XAResource
+11-01-27 16:06:59,135 [main] recovery initiated for resource DS2 with branchIdentifier 127.0.1.1.tm
+11-01-27 16:06:59,135 [main] endRecovery() done for resource DS2
+11-01-27 16:06:59,135 [main] Configuration: added resource DS2
+11-01-27 16:06:59,135 [main] atomikos connection pool 'DS2': initializing...
+11-01-27 16:06:59,136 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): registering listener atomikos connection pool 'DS2'
+11-01-27 16:06:59,136 [main] (1.5) executing task: com.atomikos.timing.PooledAlarmTimer@16fdac
+11-01-27 16:06:59,136 [main] ThreadFactory: creating new thread: Atomikos:1
+11-01-27 16:06:59,136 [main] AtomikosDataSoureBean 'DS2': init done.
+11-01-27 16:06:59,136 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,136 [main] atomikos connection pool 'DS2': pool reached max size: 1
+11-01-27 16:06:59,136 [main] atomikos connection pool 'DS2': current size: 1/1
+11-01-27 16:06:59,136 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,136 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,136 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,136 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,136 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@7a9224
+11-01-27 16:06:59,144 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,144 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,144 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,144 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,145 [main] atomikos connection pool 'DS2': got connection from pool, new size: 0/1
+11-01-27 16:06:59,145 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,145 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,145 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,145 [main] AtomikosDataSoureBean 'DS2': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,145 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,145 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,145 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,145 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,145 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,145 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,145 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@c22a3b
+11-01-27 16:06:59,324 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,324 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : close()...
+11-01-27 16:06:59,324 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,324 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,324 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@19a0feb
+11-01-27 16:06:59,324 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@19a0feb
+11-01-27 16:06:59,324 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,325 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,325 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,325 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS2'
+11-01-27 16:06:59,325 [main] atomikos connection pool 'DS2': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,325 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,325 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : closed.
+11-01-27 16:06:59,329 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,329 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,331 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,346 [main] Coordinator 127.0.1.1.tm0000100108 entering state: ACTIVE
+11-01-27 16:06:59,347 [main] Coordinator 127.0.1.1.tm0000100108 entered state: ACTIVE
+11-01-27 16:06:59,348 [main] (1.5) executing task: com.atomikos.timing.PooledAlarmTimer@da9ea4
+11-01-27 16:06:59,348 [main] ThreadFactory: creating new thread: Atomikos:2
+11-01-27 16:06:59,348 [main] Creating composite transaction: 127.0.1.1.tm0000100108
+11-01-27 16:06:59,357 [main] createCompositeTransaction ( 300000 ): created new ROOT transaction with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,359 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:59,359 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:59,359 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,359 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:59,359 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:59,359 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,359 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,359 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,359 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,359 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@106df95
+11-01-27 16:06:59,365 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,365 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,365 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,365 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,365 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:59,365 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,365 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,365 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,365 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,365 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,365 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,365 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,365 [main] a SessionHandleState with 1 context(s): checking XA context for transaction com.atomikos.icatch.imp.CompositeTransactionImp@e947ec51
+11-01-27 16:06:59,380 [main] Coordinator 127.0.1.1.tm0000100108 entering state: ACTIVE
+11-01-27 16:06:59,380 [main] Coordinator 127.0.1.1.tm0000100108 entered state: ACTIVE
+11-01-27 16:06:59,380 [main] addParticipant ( XAResourceTransaction: 3132372E302E312E312E746D30303030313030313038:3132372E302E312E312E746D31 ) for transaction 127.0.1.1.tm0000100108
+11-01-27 16:06:59,380 [main] XAResourceTransaction: 3132372E302E312E312E746D30303030313030313038:3132372E302E312E312E746D31: about to switch to XAResource org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,381 [main] XAResourceTransaction 127.0.1.1.tm0000100108127.0.1.1.tm1: switched to XAResource org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,381 [main] XAResource.start ( 3132372E302E312E312E746D30303030313030313038:3132372E302E312E312E746D31 , XAResource.TMNOFLAGS ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,382 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.BranchEnlistedStateHandler@1eb0c6
+11-01-27 16:06:59,382 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : detected transaction com.atomikos.icatch.imp.CompositeTransactionImp@e947ec51
+11-01-27 16:06:59,383 [main] Coordinator 127.0.1.1.tm0000100108 entering state: ACTIVE
+11-01-27 16:06:59,383 [main] Coordinator 127.0.1.1.tm0000100108 entered state: ACTIVE
+11-01-27 16:06:59,384 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,384 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@1bf68a9
+11-01-27 16:06:59,403 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,403 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,403 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,403 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,404 [main] XAResource.end ( 3132372E302E312E312E746D30303030313030313038:3132372E302E312E312E746D31 , XAResource.TMSUCCESS ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,404 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.BranchEndedStateHandler@167c5e3
+11-01-27 16:06:59,404 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.BranchEndedStateHandler@167c5e3
+11-01-27 16:06:59,404 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,405 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,405 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,405 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,405 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,405 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,405 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000100108
+11-01-27 16:06:59,407 [main] commit() done (by application) of transaction 127.0.1.1.tm0000100108
+11-01-27 16:06:59,407 [main] Coordinator 127.0.1.1.tm0000100108 entering state: PREPARING
+11-01-27 16:06:59,411 [main] Coordinator 127.0.1.1.tm0000100108 entered state: PREPARING
+11-01-27 16:06:59,413 [main] (1.5) executing task: com.atomikos.icatch.imp.Propagator$PropagatorThread@1162212
+11-01-27 16:06:59,413 [main] ThreadFactory: creating new thread: Atomikos:3
+11-01-27 16:06:59,413 [main] (1.5) executing task: com.atomikos.icatch.imp.Propagator$PropagatorThread@17f4fbb
+11-01-27 16:06:59,413 [main] ThreadFactory: creating new thread: Atomikos:4
+11-01-27 16:06:59,413 [Atomikos:3] About to call prepare on XAResource instance: org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,414 [Atomikos:3] XAResource.prepare ( 3132372E302E312E312E746D30303030313030313038:3132372E302E312E312E746D31 ) returning OK on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,415 [main] Coordinator 127.0.1.1.tm0000100108 entering state: IN_DOUBT
+11-01-27 16:06:59,416 [main] Coordinator 127.0.1.1.tm0000100108 entered state: IN_DOUBT
+11-01-27 16:06:59,416 [main] prepare() of Coordinator  127.0.1.1.tm0000100108 returning YES vote
+11-01-27 16:06:59,416 [main] Coordinator 127.0.1.1.tm0000100108 entering state: COMMITTING
+11-01-27 16:06:59,435 [main] Coordinator 127.0.1.1.tm0000100108 entered state: COMMITTING
+11-01-27 16:06:59,435 [main] (1.5) executing task: com.atomikos.icatch.imp.Propagator$PropagatorThread@8a1977
+11-01-27 16:06:59,436 [Atomikos:3] XAResource.commit ( 3132372E302E312E312E746D30303030313030313038:3132372E302E312E312E746D31 , false ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,437 [main] Coordinator 127.0.1.1.tm0000100108 entering state: TERMINATED
+11-01-27 16:06:59,437 [main] Coordinator 127.0.1.1.tm0000100108 : stopping timer...
+11-01-27 16:06:59,437 [main] Coordinator 127.0.1.1.tm0000100108 : disposing statehandler TERMINATED...
+11-01-27 16:06:59,437 [main] Coordinator 127.0.1.1.tm0000100108 : disposed.
+11-01-27 16:06:59,438 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : detected termination of transaction com.atomikos.icatch.imp.CompositeTransactionImp@e947ec51
+11-01-27 16:06:59,438 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@d964af
+11-01-27 16:06:59,438 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent for a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,438 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,438 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,438 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,438 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,438 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,438 [main] Coordinator 127.0.1.1.tm0000100108 entered state: TERMINATED
+11-01-27 16:06:59,438 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:59,438 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:59,439 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,439 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:59,439 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:59,439 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,439 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,439 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,439 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,439 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@6127da
+11-01-27 16:06:59,444 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,444 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,444 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,445 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,445 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:59,445 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,445 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,445 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,445 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,445 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,445 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,445 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,445 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,445 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,445 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,445 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@3e5a91
+11-01-27 16:06:59,457 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,457 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,458 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,458 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,458 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@8932e8
+11-01-27 16:06:59,458 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@8932e8
+11-01-27 16:06:59,458 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,458 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,458 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,458 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,458 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,458 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,458 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,460 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:59,460 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:59,460 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,460 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:59,460 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:59,460 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,460 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,460 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,460 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,460 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@a1d7b
+11-01-27 16:06:59,470 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,471 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,471 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,471 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,471 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:59,471 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,471 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,471 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,471 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,471 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,471 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,471 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,471 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,471 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,471 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,471 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@18f9b75
+11-01-27 16:06:59,496 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,496 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,496 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,497 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,497 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@f3552f
+11-01-27 16:06:59,497 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@f3552f
+11-01-27 16:06:59,497 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,497 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,497 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,497 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,497 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,497 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,497 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,497 [main] AtomikosDataSoureBean 'DS2': getConnection ( null )...
+11-01-27 16:06:59,497 [main] AtomikosDataSoureBean 'DS2': init...
+11-01-27 16:06:59,497 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,497 [main] atomikos connection pool 'DS2': pool reached max size: 1
+11-01-27 16:06:59,497 [main] atomikos connection pool 'DS2': current size: 1/1
+11-01-27 16:06:59,497 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,497 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,497 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,497 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,497 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@15d8d75
+11-01-27 16:06:59,503 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,503 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,503 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,503 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,503 [main] atomikos connection pool 'DS2': got connection from pool, new size: 0/1
+11-01-27 16:06:59,503 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,503 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,503 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,503 [main] AtomikosDataSoureBean 'DS2': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,503 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,503 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,503 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,503 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,503 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,503 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,503 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@1352367
+11-01-27 16:06:59,539 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,539 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : close()...
+11-01-27 16:06:59,539 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,539 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,539 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@e3fda4
+11-01-27 16:06:59,539 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@e3fda4
+11-01-27 16:06:59,539 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,539 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,539 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,539 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS2'
+11-01-27 16:06:59,539 [main] atomikos connection pool 'DS2': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,539 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,539 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : closed.
+11-01-27 16:06:59,546 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,546 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,546 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,547 [main] Coordinator 127.0.1.1.tm0000200108 entering state: ACTIVE
+11-01-27 16:06:59,547 [main] Coordinator 127.0.1.1.tm0000200108 entered state: ACTIVE
+11-01-27 16:06:59,547 [main] (1.5) executing task: com.atomikos.timing.PooledAlarmTimer@1a1ff9
+11-01-27 16:06:59,547 [main] Creating composite transaction: 127.0.1.1.tm0000200108
+11-01-27 16:06:59,547 [main] createCompositeTransaction ( 300000 ): created new ROOT transaction with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,547 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:59,547 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:59,547 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,547 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:59,547 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:59,547 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,547 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,547 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,547 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,547 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@19ed7e
+11-01-27 16:06:59,552 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,552 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,552 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,552 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,552 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:59,552 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,552 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,554 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,554 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,554 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,554 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,554 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,554 [main] a SessionHandleState with 1 context(s): checking XA context for transaction com.atomikos.icatch.imp.CompositeTransactionImp@eafcc4f0
+11-01-27 16:06:59,554 [main] Coordinator 127.0.1.1.tm0000200108 entering state: ACTIVE
+11-01-27 16:06:59,554 [main] Coordinator 127.0.1.1.tm0000200108 entered state: ACTIVE
+11-01-27 16:06:59,554 [main] addParticipant ( XAResourceTransaction: 3132372E302E312E312E746D30303030323030313038:3132372E302E312E312E746D32 ) for transaction 127.0.1.1.tm0000200108
+11-01-27 16:06:59,554 [main] XAResourceTransaction: 3132372E302E312E312E746D30303030323030313038:3132372E302E312E312E746D32: about to switch to XAResource org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,554 [main] XAResourceTransaction 127.0.1.1.tm0000200108127.0.1.1.tm2: switched to XAResource org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,555 [main] XAResource.start ( 3132372E302E312E312E746D30303030323030313038:3132372E302E312E312E746D32 , XAResource.TMNOFLAGS ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,555 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.BranchEnlistedStateHandler@a09e41
+11-01-27 16:06:59,555 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : detected transaction com.atomikos.icatch.imp.CompositeTransactionImp@eafcc4f0
+11-01-27 16:06:59,555 [main] Coordinator 127.0.1.1.tm0000200108 entering state: ACTIVE
+11-01-27 16:06:59,555 [main] Coordinator 127.0.1.1.tm0000200108 entered state: ACTIVE
+11-01-27 16:06:59,555 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,555 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@37165f
+11-01-27 16:06:59,559 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,559 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,559 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,559 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,559 [main] XAResource.end ( 3132372E302E312E312E746D30303030323030313038:3132372E302E312E312E746D32 , XAResource.TMSUCCESS ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,559 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.BranchEndedStateHandler@1abdac9
+11-01-27 16:06:59,559 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.BranchEndedStateHandler@1abdac9
+11-01-27 16:06:59,559 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,559 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,559 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,559 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,559 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000200108
+11-01-27 16:06:59,560 [main] Coordinator 127.0.1.1.tm0000200108 entering state: ABORTING
+11-01-27 16:06:59,560 [main] Coordinator 127.0.1.1.tm0000200108 entered state: ABORTING
+11-01-27 16:06:59,560 [main] (1.5) executing task: com.atomikos.icatch.imp.Propagator$PropagatorThread@1a8dfb3
+11-01-27 16:06:59,560 [main] (1.5) executing task: com.atomikos.icatch.imp.Propagator$PropagatorThread@1f68272
+11-01-27 16:06:59,560 [Atomikos:3] XAResource.rollback ( 3132372E302E312E312E746D30303030323030313038:3132372E302E312E312E746D32 ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,567 [main] Coordinator 127.0.1.1.tm0000200108 entering state: TERMINATED
+11-01-27 16:06:59,568 [main] Coordinator 127.0.1.1.tm0000200108 : stopping timer...
+11-01-27 16:06:59,568 [main] Coordinator 127.0.1.1.tm0000200108 : disposing statehandler TERMINATED...
+11-01-27 16:06:59,568 [main] Coordinator 127.0.1.1.tm0000200108 : disposed.
+11-01-27 16:06:59,568 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : detected termination of transaction com.atomikos.icatch.imp.CompositeTransactionImp@eafcc4f0
+11-01-27 16:06:59,568 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@ee260b
+11-01-27 16:06:59,568 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent for a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,568 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,568 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,568 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,568 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,568 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,568 [main] Coordinator 127.0.1.1.tm0000200108 entered state: TERMINATED
+11-01-27 16:06:59,568 [main] rollback() done of transaction 127.0.1.1.tm0000200108
+11-01-27 16:06:59,574 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:59,574 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:59,574 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,574 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:59,574 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:59,574 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,574 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,574 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,574 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,574 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@553763
+11-01-27 16:06:59,578 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,578 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,579 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,579 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,579 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:59,579 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,579 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,579 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,579 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,579 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,579 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,579 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,579 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,579 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,579 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,579 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@1443800
+11-01-27 16:06:59,582 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,583 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,583 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,583 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,583 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@189f854
+11-01-27 16:06:59,583 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@189f854
+11-01-27 16:06:59,583 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,583 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,583 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,583 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,583 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,583 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,583 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,583 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:59,583 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:59,583 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,583 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:59,584 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:59,584 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,584 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,584 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,584 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,584 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@178655
+11-01-27 16:06:59,588 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,588 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,588 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,588 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,588 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:59,588 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,588 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,588 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,588 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,588 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,588 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,588 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,588 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,588 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,588 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,589 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@1a220e6
+11-01-27 16:06:59,603 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,604 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,604 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,604 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,604 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@145fe3b
+11-01-27 16:06:59,604 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@145fe3b
+11-01-27 16:06:59,604 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,604 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,604 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,604 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,604 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,604 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,604 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,604 [main] AtomikosDataSoureBean 'DS2': getConnection ( null )...
+11-01-27 16:06:59,604 [main] AtomikosDataSoureBean 'DS2': init...
+11-01-27 16:06:59,604 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,604 [main] atomikos connection pool 'DS2': pool reached max size: 1
+11-01-27 16:06:59,604 [main] atomikos connection pool 'DS2': current size: 1/1
+11-01-27 16:06:59,604 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,604 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,604 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,604 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,604 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@35eed0
+11-01-27 16:06:59,612 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,613 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,613 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,613 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,613 [main] atomikos connection pool 'DS2': got connection from pool, new size: 0/1
+11-01-27 16:06:59,613 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,613 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,613 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,613 [main] AtomikosDataSoureBean 'DS2': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,613 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,613 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,613 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,613 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,613 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,613 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,613 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@1bbd3e2
+11-01-27 16:06:59,643 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,643 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : close()...
+11-01-27 16:06:59,643 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,643 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,643 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@948069
+11-01-27 16:06:59,643 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@948069
+11-01-27 16:06:59,643 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,643 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,643 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,643 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS2'
+11-01-27 16:06:59,643 [main] atomikos connection pool 'DS2': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,643 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,643 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : closed.
+11-01-27 16:06:59,644 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,644 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,644 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,644 [main] Coordinator 127.0.1.1.tm0000300108 entering state: ACTIVE
+11-01-27 16:06:59,644 [main] Coordinator 127.0.1.1.tm0000300108 entered state: ACTIVE
+11-01-27 16:06:59,644 [main] (1.5) executing task: com.atomikos.timing.PooledAlarmTimer@11c55bb
+11-01-27 16:06:59,644 [main] Creating composite transaction: 127.0.1.1.tm0000300108
+11-01-27 16:06:59,644 [main] createCompositeTransaction ( 300000 ): created new ROOT transaction with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,644 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:59,644 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:59,645 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,645 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:59,645 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:59,645 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,645 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,645 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,645 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,645 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@1248f2b
+11-01-27 16:06:59,649 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,649 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,649 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,649 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,649 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:59,649 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,649 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,649 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,649 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,649 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,649 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,649 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,649 [main] a SessionHandleState with 1 context(s): checking XA context for transaction com.atomikos.icatch.imp.CompositeTransactionImp@ecb19d8f
+11-01-27 16:06:59,650 [main] Coordinator 127.0.1.1.tm0000300108 entering state: ACTIVE
+11-01-27 16:06:59,650 [main] Coordinator 127.0.1.1.tm0000300108 entered state: ACTIVE
+11-01-27 16:06:59,650 [main] addParticipant ( XAResourceTransaction: 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D33 ) for transaction 127.0.1.1.tm0000300108
+11-01-27 16:06:59,650 [main] XAResourceTransaction: 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D33: about to switch to XAResource org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,650 [main] XAResourceTransaction 127.0.1.1.tm0000300108127.0.1.1.tm3: switched to XAResource org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,650 [main] XAResource.start ( 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D33 , XAResource.TMNOFLAGS ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,650 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.BranchEnlistedStateHandler@baf589
+11-01-27 16:06:59,650 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : detected transaction com.atomikos.icatch.imp.CompositeTransactionImp@ecb19d8f
+11-01-27 16:06:59,650 [main] Coordinator 127.0.1.1.tm0000300108 entering state: ACTIVE
+11-01-27 16:06:59,650 [main] Coordinator 127.0.1.1.tm0000300108 entered state: ACTIVE
+11-01-27 16:06:59,650 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,650 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@190b72c
+11-01-27 16:06:59,654 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,654 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,654 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,654 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,654 [main] XAResource.end ( 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D33 , XAResource.TMSUCCESS ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,654 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.BranchEndedStateHandler@1f7cdc7
+11-01-27 16:06:59,654 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.BranchEndedStateHandler@1f7cdc7
+11-01-27 16:06:59,654 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,654 [main] AtomikosDataSoureBean 'DS2': getConnection ( null )...
+11-01-27 16:06:59,654 [main] AtomikosDataSoureBean 'DS2': init...
+11-01-27 16:06:59,654 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,654 [main] atomikos connection pool 'DS2': pool reached max size: 1
+11-01-27 16:06:59,654 [main] atomikos connection pool 'DS2': current size: 1/1
+11-01-27 16:06:59,654 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,654 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,654 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,654 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,654 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@1e6f0ef
+11-01-27 16:06:59,659 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,659 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,659 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,659 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,659 [main] atomikos connection pool 'DS2': got connection from pool, new size: 0/1
+11-01-27 16:06:59,659 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,659 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,659 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,659 [main] AtomikosDataSoureBean 'DS2': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,659 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,659 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,659 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,659 [main] a SessionHandleState with 1 context(s): checking XA context for transaction com.atomikos.icatch.imp.CompositeTransactionImp@ecb19d8f
+11-01-27 16:06:59,659 [main] Coordinator 127.0.1.1.tm0000300108 entering state: ACTIVE
+11-01-27 16:06:59,659 [main] Coordinator 127.0.1.1.tm0000300108 entered state: ACTIVE
+11-01-27 16:06:59,659 [main] addParticipant ( XAResourceTransaction: 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D34 ) for transaction 127.0.1.1.tm0000300108
+11-01-27 16:06:59,659 [main] XAResourceTransaction: 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D34: about to switch to XAResource org.apache.derby.jdbc.EmbedXAResource@c12474
+11-01-27 16:06:59,659 [main] XAResourceTransaction 127.0.1.1.tm0000300108127.0.1.1.tm4: switched to XAResource org.apache.derby.jdbc.EmbedXAResource@c12474
+11-01-27 16:06:59,659 [main] XAResource.start ( 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D34 , XAResource.TMNOFLAGS ) on resource DS2 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@c12474
+11-01-27 16:06:59,660 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.BranchEnlistedStateHandler@407166
+11-01-27 16:06:59,660 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : detected transaction com.atomikos.icatch.imp.CompositeTransactionImp@ecb19d8f
+11-01-27 16:06:59,660 [main] Coordinator 127.0.1.1.tm0000300108 entering state: ACTIVE
+11-01-27 16:06:59,660 [main] Coordinator 127.0.1.1.tm0000300108 entered state: ACTIVE
+11-01-27 16:06:59,660 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,660 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@490342
+11-01-27 16:06:59,663 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,663 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : close()...
+11-01-27 16:06:59,663 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,663 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,663 [main] XAResource.end ( 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D34 , XAResource.TMSUCCESS ) on resource DS2 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@c12474
+11-01-27 16:06:59,663 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.BranchEndedStateHandler@1458dcb
+11-01-27 16:06:59,663 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.BranchEndedStateHandler@1458dcb
+11-01-27 16:06:59,663 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : closed.
+11-01-27 16:06:59,664 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,664 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,664 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,664 [main] getCompositeTransaction()  returning instance with id 127.0.1.1.tm0000300108
+11-01-27 16:06:59,664 [main] Coordinator 127.0.1.1.tm0000300108 entering state: ABORTING
+11-01-27 16:06:59,664 [main] Coordinator 127.0.1.1.tm0000300108 entered state: ABORTING
+11-01-27 16:06:59,664 [main] (1.5) executing task: com.atomikos.icatch.imp.Propagator$PropagatorThread@1603522
+11-01-27 16:06:59,664 [main] (1.5) executing task: com.atomikos.icatch.imp.Propagator$PropagatorThread@1408a75
+11-01-27 16:06:59,664 [main] (1.5) executing task: com.atomikos.icatch.imp.Propagator$PropagatorThread@423d4f
+11-01-27 16:06:59,664 [main] ThreadFactory: creating new thread: Atomikos:5
+11-01-27 16:06:59,664 [Atomikos:5] XAResource.rollback ( 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D34 ) on resource DS2 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@c12474
+11-01-27 16:06:59,671 [Atomikos:3] XAResource.rollback ( 3132372E302E312E312E746D30303030333030313038:3132372E302E312E312E746D33 ) on resource DS1 represented by XAResource instance org.apache.derby.jdbc.EmbedXAResource@3aef16
+11-01-27 16:06:59,673 [main] Coordinator 127.0.1.1.tm0000300108 entering state: TERMINATED
+11-01-27 16:06:59,673 [main] Coordinator 127.0.1.1.tm0000300108 : stopping timer...
+11-01-27 16:06:59,673 [main] Coordinator 127.0.1.1.tm0000300108 : disposing statehandler TERMINATED...
+11-01-27 16:06:59,673 [main] Coordinator 127.0.1.1.tm0000300108 : disposed.
+11-01-27 16:06:59,673 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : detected termination of transaction com.atomikos.icatch.imp.CompositeTransactionImp@ecb19d8f
+11-01-27 16:06:59,673 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@381d92
+11-01-27 16:06:59,673 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent for a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,673 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,673 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,673 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS2'
+11-01-27 16:06:59,673 [main] atomikos connection pool 'DS2': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,673 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,673 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : detected termination of transaction com.atomikos.icatch.imp.CompositeTransactionImp@ecb19d8f
+11-01-27 16:06:59,674 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@1d8e9e
+11-01-27 16:06:59,674 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent for a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,674 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,674 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,674 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,674 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,674 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,674 [main] Coordinator 127.0.1.1.tm0000300108 entered state: TERMINATED
+11-01-27 16:06:59,674 [main] rollback() done of transaction 127.0.1.1.tm0000300108
+11-01-27 16:06:59,674 [main] AtomikosDataSoureBean 'DS1': getConnection ( null )...
+11-01-27 16:06:59,674 [main] AtomikosDataSoureBean 'DS1': init...
+11-01-27 16:06:59,674 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,675 [main] atomikos connection pool 'DS1': pool reached max size: 1
+11-01-27 16:06:59,675 [main] atomikos connection pool 'DS1': current size: 1/1
+11-01-27 16:06:59,675 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,675 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,675 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,675 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,675 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@7e5130
+11-01-27 16:06:59,680 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,680 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,680 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,680 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,680 [main] atomikos connection pool 'DS1': got connection from pool, new size: 0/1
+11-01-27 16:06:59,680 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,680 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,680 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,680 [main] AtomikosDataSoureBean 'DS1': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) 
+11-01-27 16:06:59,680 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,680 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,680 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,680 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,680 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,680 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,680 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@38d460
+11-01-27 16:06:59,683 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,683 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : close()...
+11-01-27 16:06:59,683 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,683 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,683 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@97d3f0
+11-01-27 16:06:59,683 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@97d3f0
+11-01-27 16:06:59,683 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,683 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,683 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,683 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS1'
+11-01-27 16:06:59,683 [main] atomikos connection pool 'DS1': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,683 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,683 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@19699031, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@28732166 (XID = 13476), (SESSIONID = 5), (DATABASE = db1), (DRDAID = null) : closed.
+11-01-27 16:06:59,684 [main] AtomikosDataSoureBean 'DS2': getConnection ( null )...
+11-01-27 16:06:59,684 [main] AtomikosDataSoureBean 'DS2': init...
+11-01-27 16:06:59,684 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,684 [main] atomikos connection pool 'DS2': pool reached max size: 1
+11-01-27 16:06:59,684 [main] atomikos connection pool 'DS2': current size: 1/1
+11-01-27 16:06:59,684 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time acquired
+11-01-27 16:06:59,684 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): no test query, skipping test
+11-01-27 16:06:59,684 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): creating connection proxy...
+11-01-27 16:06:59,684 [main] a SessionHandleState with 0 context(s): notifySessionBorrowed
+11-01-27 16:06:59,684 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.NotInBranchStateHandler@1db6942
+11-01-27 16:06:59,689 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,689 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,689 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,689 [main] an AtomikosXAPooledConnection with a SessionHandleState with 1 context(s): returning proxy org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,689 [main] atomikos connection pool 'DS2': got connection from pool, new size: 0/1
+11-01-27 16:06:59,689 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,689 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling toString...
+11-01-27 16:06:59,689 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : toString returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,689 [main] AtomikosDataSoureBean 'DS2': returning org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) 
+11-01-27 16:06:59,689 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,689 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : notifyBeforeUse a SessionHandleState with 1 context(s)
+11-01-27 16:06:59,689 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,689 [main] a SessionHandleState with 1 context(s): checking XA context for transaction null
+11-01-27 16:06:59,689 [main] a TransactionContext: changing to state null
+11-01-27 16:06:59,689 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : calling createStatement...
+11-01-27 16:06:59,689 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : createStatement returning org.apache.derby.iapi.jdbc.BrokeredStatement40@7efa96
+11-01-27 16:06:59,693 [main] getCompositeTransaction() returning NULL!
+11-01-27 16:06:59,693 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : close()...
+11-01-27 16:06:59,693 [main] a SessionHandleState with 1 context(s): entering notifySessionClosed
+11-01-27 16:06:59,693 [main] a SessionHandleState with 1 context(s): delegeting session close to a TransactionContext
+11-01-27 16:06:59,693 [main] a TransactionContext: changing state to com.atomikos.datasource.xa.session.TerminatedStateHandler@3650ed
+11-01-27 16:06:59,693 [main] a TransactionContext: changing to state com.atomikos.datasource.xa.session.TerminatedStateHandler@3650ed
+11-01-27 16:06:59,693 [main] a SessionHandleState with 0 context(s): all contexts terminated, firing TerminatedEvent
+11-01-27 16:06:59,693 [main] SessionHandleState terminated, firing XPooledConnectionTerminated event for an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s)
+11-01-27 16:06:59,693 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,694 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): notifying listener: atomikos connection pool 'DS2'
+11-01-27 16:06:59,694 [main] atomikos connection pool 'DS2': connection an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s) became available, notifying potentially waiting threads
+11-01-27 16:06:59,694 [main] an AtomikosXAPooledConnection with a SessionHandleState with 0 context(s): updating last time released
+11-01-27 16:06:59,694 [main] atomikos connection proxy for org.apache.derby.iapi.jdbc.BrokeredConnection40@16645208, Wrapped Connection = org.apache.derby.impl.jdbc.EmbedConnection40@12129459 (XID = 7849), (SESSIONID = 5), (DATABASE = db2), (DRDAID = null) : closed.
