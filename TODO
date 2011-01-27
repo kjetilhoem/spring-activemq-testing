@@ -1,44 +1,14 @@
-        
+    
+    
     <!-- TODO implement error-channel + basic error-handling? -->
-    
-    - 11:25:40 [ WARN] listener.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'Infrastructure.ValidateEmailAddress' - trying to recover. Cause: Cannot publish to a deleted Destination: temp-queue://ID:ubuntu-53537-1295259901626-0:1:2
-        - hvordan funker det her i praksis hvis man kjører med transactions & shit?
 
-    - <int-jms:inbound-gateway .. eneste måte å dele threadpools & shit på er og bruke en standard container.. men FUCK!
-    
-    - duplicate ClientID's .. skjer av og til...
-    
-    Caused by: org.springframework.jms.InvalidClientIDException: Broker: localhost - Client: producer already connected from /127.0.0.1:53266; nested exception is javax.jms.InvalidClientIDException: Broker: localhost - Client: producer already connected from /127.0.0.1:53266
-    at org.springframework.jms.support.JmsUtils.convertJmsAccessException(JmsUtils.java:282)
-    at org.springframework.jms.support.JmsAccessor.convertJmsAccessException(JmsAccessor.java:168)
-    at org.springframework.jms.core.JmsTemplate.execute(JmsTemplate.java:469)
-    at org.springframework.jms.core.JmsTemplate.send(JmsTemplate.java:543)
-    at org.springframework.jms.core.JmsTemplate.convertAndSend(JmsTemplate.java:653)
-    at org.springframework.integration.jms.JmsSendingMessageHandler.handleMessageInternal(JmsSendingMessageHandler.java:92)
-    at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:78)
-    ... 8 more
-Caused by: javax.jms.InvalidClientIDException: Broker: localhost - Client: producer already connected from /127.0.0.1:53266
-    at org.apache.activemq.broker.region.RegionBroker.addConnection(RegionBroker.java:243)
-    at org.apache.activemq.broker.BrokerFilter.addConnection(BrokerFilter.java:85)
-    at org.apache.activemq.advisory.AdvisoryBroker.addConnection(AdvisoryBroker.java:78)
-    at org.apache.activemq.broker.BrokerFilter.addConnection(BrokerFilter.java:85)
-    at org.apache.activemq.broker.BrokerFilter.addConnection(BrokerFilter.java:85)
-    at org.apache.activemq.broker.MutableBrokerFilter.addConnection(MutableBrokerFilter.java:91)
-    at org.apache.activemq.broker.TransportConnection.processAddConnection(TransportConnection.java:696)
-    at org.apache.activemq.broker.jmx.ManagedTransportConnection.processAddConnection(ManagedTransportConnection.java:83)
-    at org.apache.activemq.command.ConnectionInfo.visit(ConnectionInfo.java:137)
-    at org.apache.activemq.broker.TransportConnection.service(TransportConnection.java:311)
-    at org.apache.activemq.broker.TransportConnection$1.onCommand(TransportConnection.java:185)
-    at org.apache.activemq.transport.TransportFilter.onCommand(TransportFilter.java:69)
-    at org.apache.activemq.transport.WireFormatNegotiator.onCommand(WireFormatNegotiator.java:113)
-    at org.apache.activemq.transport.InactivityMonitor.onCommand(InactivityMonitor.java:228)
-    at org.apache.activemq.transport.TransportSupport.doConsume(TransportSupport.java:83)
-    at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:220)
-    at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:202)
-    at java.lang.Thread.run(Thread.java:662)
     
     - Set up & use a MessageConverter
         - ErrorHandler, hva skjer client-side hvis f.eks marhsalling feiler? Hva vil vi at skal skje..
+        
+        
+    - 11:25:40 [ WARN] listener.DefaultMessageListenerContainer - Setup of JMS message listener invoker failed for destination 'Infrastructure.ValidateEmailAddress' - trying to recover. Cause: Cannot publish to a deleted Destination: temp-queue://ID:ubuntu-53537-1295259901626-0:1:2
+        - hvordan funker det her i praksis hvis man kjører med transactions & shit?
         
     - spring-integration krever spring 3.0.5
         
@@ -48,8 +18,6 @@ Caused by: javax.jms.InvalidClientIDException: Broker: localhost - Client: produ
         ConnectionFactory props
         
     - asynch producer flow control, connctionFactory.setProducerWindowSize(1024000);  -  http://activemq.apache.org/producer-flow-control.html
-    
-    - reduce xml-config for spring-integration mapping?
     
     - http://activemq.apache.org/activemq-message-properties.html
             messages are persistent by default, and has no expiry, this must be tweaked for jalla-messages

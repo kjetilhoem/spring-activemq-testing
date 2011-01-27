@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="no" xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+    
+    <!-- common threadpool for all jms-consumers (message-listener containers) -->
+    <task:executor id="jms-consumers" keep-alive="30" pool-size="0-10" />
+    
+    
+    <!-- define some helper-beans for message-driven containers -->
+    <bean id="abstractMessageListenerContainer"
+            abstract="true"
+            class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="taskExecutor" ref="jms-consumers" />
+    </bean>
+    
+    <bean id="abstractDurablePubSubMessageListenerContainer" parent="abstractMessageListenerContainer"
+            abstract="true"
+            p:clientId="#{systemProperties['JmsClientId']}"
+            p:pubSubDomain="true"
+            p:subscriptionDurable="true" />
+    
+</beans>
